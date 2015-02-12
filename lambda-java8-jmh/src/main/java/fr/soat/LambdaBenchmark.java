@@ -31,6 +31,7 @@
 
 package fr.soat;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
@@ -38,6 +39,7 @@ import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
+import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Measurement;
 import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
@@ -48,117 +50,33 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Threads;
 import org.openjdk.jmh.annotations.Warmup;
 
-import com.github.javafaker.Faker;
-
-////@BenchmarkMode(Mode.SampleTime)
-//@BenchmarkMode( Mode.Throughput)
-////@OutputTimeUnit(TimeUnit.MILLISECONDS)
-////@Warmup(iterations = 5, time = 3, timeUnit = TimeUnit.SECONDS)
-////@Measurement(iterations = 20, time = 3, timeUnit = TimeUnit.SECONDS)
-////@Fork(1)
-////@State(Scope.Benchmark)
-////@BenchmarkMode(Mode.SampleTime)
-//@OutputTimeUnit(TimeUnit.MILLISECONDS)
-//@Warmup(iterations = 10)//, time = 1, timeUnit = TimeUnit.NANOSECONDS)
-////@Warmup(time = 200, timeUnit = TimeUnit.MILLISECONDS)
-//@Measurement(iterations = 30)//, time = 100, timeUnit = TimeUnit.MILLISECONDS)
-////@Measurement(time = 200, timeUnit = TimeUnit.MILLISECONDS)
-//@Fork(5)
-//@State(Scope.Thread) // all fields of object will be local to threads of benchmark
-////@Threads(Threads.MAX)
-//public class SimplePersonneSorter8Benchmark {
-//
-//	// benchmarked service
-////	private PersonneSorter8 sortBean = new PersonneSorter8();
-//
-//	// iterations for each measure
-////	@Param({ "200", "400", "800", "1600" })
-////	@Param({ "10", "100", "1000" })
-////	public int nbPersons;
-//
-//	// array to sort
-////	private Personne[] persons;
-//
-////	@Setup
-////	public void init() {
-////		// init the array of personne
-////		persons = new Personne[] {
-////			new Personne("Jen", "Barber"),
-////			new Personne("Roy", "Trenneman"),
-////			new Personne("Maurice", "Moss"),
-////			new Personne("Deynholm", "Reynholm"),
-////			new Personne("Richmond", "Avenal"),
-////			new Personne("Douglas" , "Reynholm")			
-////		};
-////	}
-//
-//	@Benchmark
-//    public void benchmarkSort() {
-//		Personne[] persons = new Personne[] {
-//		new Personne("Jen", "Barber"),
-//		new Personne("Roy", "Trenneman"),
-//		new Personne("Maurice", "Moss"),
-//		new Personne("Deynholm", "Reynholm"),
-//		new Personne("Richmond", "Avenal"),
-//		new Personne("Douglas" , "Reynholm")			
-//
-//		Arrays.sort(persons, Comparator.comparing((Personne p) -> p.getNom()));
-//    }
-//}
-//
-
-@BenchmarkMode(Mode.SampleTime)
-@OutputTimeUnit(TimeUnit.NANOSECONDS)
-@Warmup(iterations = 1, time = 5, timeUnit = TimeUnit.SECONDS)
-@Measurement(iterations = 3, time = 10, timeUnit = TimeUnit.SECONDS)
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
 @Fork(1)
 @State(Scope.Thread)
 @Threads(1)
 public class LambdaBenchmark {
 
-//	// array to sort
-//	private Personne[] persons;
-//
-//	
-//	
-//	@Setup(Level.Iteration)
-//	public void init() {
-//		// init the array of personne
-//		persons = new Personne[] { new Personne("Jen", "Barber"),
-//				new Personne("Roy", "Trenneman"),
-//				new Personne("Maurice", "Moss"),
-//				new Personne("Deynholm", "Reynholm"),
-//				new Personne("Richmond", "Avenal"),
-//				new Personne("Douglas", "Reynholm") };
-//	}
-
-	
-	// nom/prenom generator
-	private Faker faker = new Faker();
-	
-	// iterations for each measure
-//	@Param({ "200", "400", "800", "1600" })
-	@Param({"128", "256", "512", "1024", "2048", "4092", "8184", "16368" })
+	// measure for a set of dataset...
+	@Param({ "5000", "10000", "25000", "50000", "100000", "200000", "400000", "800000" })
 	public int nbPersons;
 
-	// array to sort
-	private Personne[] persons;
+	// the array of peronne to sort during invokation
+	private Personne[] personneToSortArray;
 
-	@Setup(Level.Iteration)
-	public void init() {
-		// init the array of personne
-		persons = new Personne[nbPersons];
-		for (int i = 0; i < nbPersons; i++) {
-			String prenom = faker.name().firstName();
-			String nom = faker.name().lastName();
-			persons[i] = new Personne(prenom, nom);
-		}
+	@Setup(Level.Invocation)
+	public void reshuflePersonnesArray() throws IOException {
+		// before each sort invocation,
+		// restore unsorted array of personnes before sorting
+		personneToSortArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
 	}
 
-	
+	@Warmup(iterations = 8, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+	@Measurement(iterations = 20, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
 	@Benchmark
-	public void benchmarkSort(LambdaBenchmark b) {
+	public void benchmarkSort() {
 		// Here is my benchmark code (sort array)
-		Arrays.sort(b.persons, Comparator.comparing((Personne p) -> p.getNom()));
+		// use a lambda 
+		Arrays.sort(personneToSortArray, Comparator.comparing((Personne p) -> p.getNom()));
 	}
 }

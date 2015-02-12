@@ -31,6 +31,7 @@
 
 package fr.soat;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
@@ -49,162 +50,39 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Threads;
 import org.openjdk.jmh.annotations.Warmup;
 
-import com.github.javafaker.Faker;
-
-////@BenchmarkMode( Mode.SampleTime)
-//@BenchmarkMode( Mode.Throughput)
-////@OutputTimeUnit(TimeUnit.MILLISECONDS)
-////@Warmup(iterations = 5, time = 3, timeUnit = TimeUnit.SECONDS)
-////@Measurement(iterations = 20, time = 3, timeUnit = TimeUnit.SECONDS)
-////@Fork(1)
-////@State(Scope.Benchmark)
-////@BenchmarkMode(Mode.SampleTime)
-//@OutputTimeUnit(TimeUnit.MILLISECONDS)
-//@Warmup(iterations = 10)//, time = 1, timeUnit = TimeUnit.NANOSECONDS)
-////@Warmup(time = 200, timeUnit = TimeUnit.MILLISECONDS)
-//@Measurement(iterations = 30)//, time = 100, timeUnit = TimeUnit.MILLISECONDS)
-////@Measurement(time = 200, timeUnit = TimeUnit.MILLISECONDS)
-//@Fork(5)
-//@State(Scope.Thread) // all fields of object will be local to threads of benchmark
-//@Threads(Threads.MAX)
-//public class SimplePersonneSorter7Benchmark {
-//
-//	// benchmarked service
-////	private PersonneSorter8 sortBean = new PersonneSorter8();
-//
-//	// iterations for each measure
-////	@Param({ "200", "400", "800", "1600" })
-////	@Param({ "10", "100", "1000" })
-////	public int nbPersons;
-//
-//	// array to sort
-//	private Personne[] persons;
-//
-//	@Setup
-//	public void init() {
-//		// init the array of personne
-//		persons = new Personne[] {
-//			new Personne("Jen", "Barber"),
-//			new Personne("Roy", "Trenneman"),
-//			new Personne("Maurice", "Moss"),
-//			new Personne("Deynholm", "Reynholm"),
-//			new Personne("Richmond", "Avenal"),
-//			new Personne("Douglas" , "Reynholm")			
-//		};
-//	}
-//
-//	@Benchmark
-//    public void benchmarkSort() {
-//		Arrays.sort(persons, new Comparator<Personne>() {
-//			public int compare(Personne p1, Personne p2) {
-//				return p1.getNom().compareTo(p2.getNom());
-//			}
-//		});
-//    }
-//	
-//}
-//
-
-//@BenchmarkMode(Mode.SampleTime)
-//@OutputTimeUnit(TimeUnit.MICROSECONDS)
-//@Warmup(iterations = 10)
-//@Measurement(iterations = 8)
-//@Fork(1)
-//@State(Scope.Thread)
-//@Threads(1)
-//public class AnonymousClassBenchmark {
-//
-//	// array to sort
-//	private Personne[] persons;
-//
-//	@Setup(Level.Iteration)
-//	public void init() {
-//		// init the array of personne
-//		persons = new Personne[] { new Personne("Jen", "Barber"),
-//				new Personne("Roy", "Trenneman"),
-//				new Personne("Maurice", "Moss"),
-//				new Personne("Deynholm", "Reynholm"),
-//				new Personne("Richmond", "Avenal"),
-//				new Personne("Douglas", "Reynholm") };
-//	}
-//
-//	@Benchmark
-//	public void benchmarkSort() {
-//		// Here is my benchmark code (sort array)
-//		// Personne[] persons = new Personne[] {
-//		// new Personne("Jen", "Barber"),
-//		// new Personne("Roy", "Trenneman"),
-//		// new Personne("Maurice", "Moss"),
-//		// new Personne("Deynholm", "Reynholm"),
-//		// new Personne("Richmond", "Avenal"),
-//		// new Personne("Douglas" , "Reynholm")};
-//
-//		// use an anonymous class to immplement a Comparator
-//		Arrays.sort(persons, new Comparator<Personne>() {
-//			public int compare(Personne p1, Personne p2) {
-//				return p1.getNom().compareTo(p2.getNom());
-//			}
-//		});
-//	}
-//}
-
-@BenchmarkMode(Mode.SampleTime)
-@OutputTimeUnit(TimeUnit.NANOSECONDS)
-@Warmup(iterations = 1, time = 5, timeUnit = TimeUnit.SECONDS)
-@Measurement(iterations = 3, time = 10, timeUnit = TimeUnit.SECONDS)
+@BenchmarkMode(Mode.AverageTime)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
 @Fork(1)
 @State(Scope.Thread)
 @Threads(1)
 public class AnonymousClassBenchmark {
 
-//	// array to sort
-//	private Personne[] persons;
-//
-//	
-//	
-//	@Setup(Level.Iteration)
-//	public void init() {
-//		// init the array of personne
-//		persons = new Personne[] { new Personne("Jen", "Barber"),
-//				new Personne("Roy", "Trenneman"),
-//				new Personne("Maurice", "Moss"),
-//				new Personne("Deynholm", "Reynholm"),
-//				new Personne("Richmond", "Avenal"),
-//				new Personne("Douglas", "Reynholm") };
-//	}
-
-	
-	// nom/prenom generator
-	private Faker faker = new Faker();
-	
-	// iterations for each measure
-//	@Param({ "200", "400", "800", "1600" })
-	@Param({"128", "256", "512", "1024", "2048", "4092", "8184", "16368" })
+	// measure for a set of dataset...
+	@Param({ "5000", "10000", "25000", "50000", "100000", "200000", "400000", "800000" })
 	public int nbPersons;
 
-	// array to sort
-	private Personne[] persons;
+	// the array of peronne to sort during invokation
+	private Personne[] personneToSortArray;
 
-	@Setup(Level.Iteration)
-	public void init() {
-		// init the array of personne
-		persons = new Personne[nbPersons];
-		for (int i = 0; i < nbPersons; i++) {
-			String prenom = faker.name().firstName();
-			String nom = faker.name().lastName();
-			persons[i] = new Personne(prenom, nom);
-		}
+	@Setup(Level.Invocation)
+	public void reshuflePersonnesArray() throws IOException {
+		// before each sort invocation,
+		// restore unsorted array of personnes before sorting
+		personneToSortArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
 	}
 
 	
 	@Benchmark
-	public void benchmarkSort(AnonymousClassBenchmark b) {
+	@Warmup(iterations = 8, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+	@Measurement(iterations = 20, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+	public void benchmarkSort() {
 		// Here is my benchmark code (sort array)
 		// use an anonymous class to immplement a Comparator
-		Arrays.sort(b.persons, new Comparator<Personne>() {
+		Arrays.sort(personneToSortArray, new Comparator<Personne>() {
 			public int compare(Personne p1, Personne p2) {
 				return p1.getNom().compareTo(p2.getNom());
 			}
 		});
 	}
+	
 }

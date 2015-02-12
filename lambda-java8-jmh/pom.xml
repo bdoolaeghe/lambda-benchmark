@@ -61,13 +61,11 @@ THE POSSIBILITY OF SUCH DAMAGE.
             <version>${jmh.version}</version>
             <scope>provided</scope>
         </dependency>
-
-	<!-- java8 lambda based benchmarked lib -->
-           	<dependency>
-			<groupId>fr.soat</groupId>
-			<artifactId>java8-benchmarked-sample</artifactId>
+        <dependency>
+        	<groupId>fr.soat</groupId>
+			<artifactId>data-generator</artifactId>
 			<version>1.0-SNAPSHOT</version>
-		</dependency>
+        </dependency>
     </dependencies>
 
     <properties>
