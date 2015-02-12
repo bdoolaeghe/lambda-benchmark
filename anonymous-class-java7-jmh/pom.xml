@@ -49,18 +49,11 @@
 			<version>${jmh.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- Faker to generate Personne samples -->
-		<dependency>
-			<groupId>com.github.javafaker</groupId>
-			<artifactId>javafaker</artifactId>
-			<version>0.4</version>
-		</dependency>
 	</dependencies>
-
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jmh.version>1.5</jmh.version>
+		<jmh.version>1.5.2</jmh.version>
 		<javac.target>1.7</javac.target>
 		<uberjar.name>benchmarks</uberjar.name>
 	</properties>
