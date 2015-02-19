@@ -5,9 +5,10 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
-public final class BenchmarkLauncher {
-	
-	private BenchmarkLauncher() {}
+public final class MyBenchmarkLauncher {
+
+	private MyBenchmarkLauncher() {
+	}
 
 	public static void main(final String[] _args) throws RunnerException {
 		Options opt = new OptionsBuilder()

@@ -50,12 +50,12 @@ public class MyBenchmark {
 		double x;
 	}
 
-    @Benchmark
-    @BenchmarkMode(Mode.SampleTime)
-    @Warmup(iterations = 8, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 20, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
-    @OutputTimeUnit(TimeUnit.NANOSECONDS)
-    public double benchmarkLogarithm(DataContainer data) {
+	@Benchmark
+	@BenchmarkMode(Mode.SampleTime)
+	@Warmup(iterations = 8, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+	@Measurement(iterations = 20, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+	@OutputTimeUnit(TimeUnit.NANOSECONDS)
+	public double benchmarkLogarithm(DataContainer data) {
 		// will be executed with 0.000001, 0.001, 0.01, 1, 10, 1000, 1000000
 		double logN = Math.log(data.x);
 		return logN;
