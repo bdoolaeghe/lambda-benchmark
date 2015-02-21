@@ -30,10 +30,12 @@
 
 package fr.soat;
 
+import java.math.RoundingMode;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
+import org.openjdk.jmh.annotations.Fork;
 import org.openjdk.jmh.annotations.Measurement;
 import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
@@ -42,22 +44,40 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
 
+
+@BenchmarkMode(Mode.SampleTime)
+@Warmup(iterations = 8, time = 200, timeUnit = TimeUnit.MILLISECONDS)
+@Measurement(iterations = 20, time = 200, timeUnit = TimeUnit.MILLISECONDS)
+@OutputTimeUnit(TimeUnit.NANOSECONDS)
+@Fork(1)
 public class MyBenchmark {
 
 	@State(Scope.Benchmark)
 	public static class DataContainer {
-		@Param({ "0.000001", "0.001", "0.01", "1", "10", "1000", "1000000" })
-		double x;
+		@Param({"1", "10", "100", "1000", "1000000", "1000000000" })
+		int x;
 	}
 
 	@Benchmark
-	@BenchmarkMode(Mode.SampleTime)
-	@Warmup(iterations = 8, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
-	@Measurement(iterations = 20, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
-	@OutputTimeUnit(TimeUnit.NANOSECONDS)
-	public double benchmarkLogarithm(DataContainer data) {
-		// will be executed with 0.000001, 0.001, 0.01, 1, 10, 1000, 1000000
-		double logN = Math.log(data.x);
+	public double benchmarkLogarithmJdk(DataContainer data) {
+		// Math.log10() from jdk
+		double logN = java.lang.Math.log10(data.x);
 		return logN;
 	}
+
+	@Benchmark
+	public double benchmarkLogarithmGuava(DataContainer data) {
+		// IntMath.log10() from google guava
+		double logN = com.google.common.math.IntMath.log10(data.x, RoundingMode.UNNECESSARY);
+		return logN;
+	}
+	
+	@Benchmark
+	public double benchmarkLogarithmApacheCommon(DataContainer data) {
+		// MathUtils.log() from apache commons
+		double logN = org.apache.commons.math.util.MathUtils.log(10, data.x);
+		return logN;
+	}
+
+
 }
