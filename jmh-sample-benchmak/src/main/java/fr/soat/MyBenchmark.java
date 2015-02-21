@@ -30,8 +30,9 @@
 
 package fr.soat;
 
-import java.math.RoundingMode;
 import java.util.concurrent.TimeUnit;
+
+import odk.lang.FastMath;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -54,30 +55,32 @@ public class MyBenchmark {
 
 	@State(Scope.Benchmark)
 	public static class DataContainer {
-		@Param({"1", "10", "100", "1000", "1000000", "1000000000" })
-		int x;
+		@Param({"0.000000000001","0.000000001","0.000001","0.001","0.1","1", "10", "100", "1000", "1000000", "1000000000", "1000000000000" })
+		double x;
 	}
 
 	@Benchmark
 	public double benchmarkLogarithmJdk(DataContainer data) {
-		// Math.log10() from jdk
-		double logN = java.lang.Math.log10(data.x);
+		double logN = java.lang.Math.log(data.x);
 		return logN;
 	}
 
-	@Benchmark
-	public double benchmarkLogarithmGuava(DataContainer data) {
-		// IntMath.log10() from google guava
-		double logN = com.google.common.math.IntMath.log10(data.x, RoundingMode.UNNECESSARY);
-		return logN;
-	}
-	
 	@Benchmark
 	public double benchmarkLogarithmApacheCommon(DataContainer data) {
-		// MathUtils.log() from apache commons
-		double logN = org.apache.commons.math.util.MathUtils.log(10, data.x);
+		double logN = org.apache.commons.math3.util.FastMath.log(data.x);
 		return logN;
 	}
 
 
+	@Benchmark
+	public double benchmarkLogarithmJafama(DataContainer data) {
+		double logN = odk.lang.FastMath.log(data.x);
+		return logN;
+	}
+
+	@Benchmark
+	public double benchmarkLogarithmJafamaLogQuick(DataContainer data) {
+		double logN = odk.lang.FastMath.logQuick(data.x);
+		return logN;
+	}
 }
