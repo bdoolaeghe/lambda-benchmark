@@ -32,8 +32,6 @@ package fr.soat;
 
 import java.util.concurrent.TimeUnit;
 
-import odk.lang.FastMath;
-
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;

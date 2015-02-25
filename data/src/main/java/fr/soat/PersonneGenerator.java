@@ -12,12 +12,12 @@ public class PersonneGenerator {
 
 	// generate a file containing a random list of personnes
 	public static void main(String[] args) throws IOException {
-		int nbPersons = 1000000;
+		int nbPersons = 3000000;
 		Faker faker = new Faker(Locale.FRANCE);
 		try (FileWriter w = new FileWriter(new File("personnes.txt"))) {
 			for (int i = 0; i < nbPersons; i++) {
 				Name name = faker.name();
-				w.write(name.firstName() + "\t" + name.lastName() + "\n");
+				w.write(name.firstName() + "\t" + name.lastName().toUpperCase() + "\n");
 			}
 		}
 	}
