@@ -31,32 +31,24 @@
 
 package fr.soat;
 
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
-import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Measurement;
 import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
-import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Scope;
-import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Threads;
 import org.openjdk.jmh.annotations.Warmup;
 
-import cern.colt.Sorting;
-import fr.soat.AnonymousClassComparatorBenchmark.PersonnesContainer;
-
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-@Fork(value = 1, jvmArgsPrepend = {"-server", "-Xmx512m"} )
-@Threads(1)
+@Fork(value = 1, jvmArgsPrepend = {"-server", "-Xmx1g", "-XX:+TieredCompilation"} )
+@Threads(4)
 //@Fork(value = 0)
 public class AnonymousClassComparatorBenchmark {
 
@@ -67,35 +59,36 @@ public class AnonymousClassComparatorBenchmark {
         
         Personne p2 = new Personne("Miguel", "DUSS");
         
+        Comparator<Personne> comparator = new Comparator<Personne>() {
+        	public int compare(Personne p1, Personne p2) {
+        		int nameComparaison = p1.getNom().compareTo(p2.getNom());
+        		if (nameComparaison != 0) {
+        			// noms are different
+        			return nameComparaison;
+        		} else {
+        			// noms are same, we need to comapre prenoms
+        			return p1.getPrenom().compareTo(p2.getPrenom());
+        		}
+        	}
+        };
+
     }
     
-    static final Comparator<Personne> comparator = new Comparator<Personne>() {
-        public int compare(Personne p1, Personne p2) {
-            int nameComparaison = p1.getNom().compareTo(p2.getNom());
-            if (nameComparaison != 0) {
-                // noms are different
-                return nameComparaison;
-            } else {
-                // noms are same, we need to comapre prenoms
-                return p1.getPrenom().compareTo(p2.getPrenom());
-            }
-        }
-    };
 
 
 
     @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-    @Benchmark
-    public int benchmarkComparatorAnonymousClassInvokeOnly(PersonnesContainer c) {
-        int compared = comparator.compare(c.p1, c.p2);
+//    @Benchmark
+    public int invokeOnlyAnonymousClass(PersonnesContainer c) {
+        int compared = c.comparator.compare(c.p1, c.p2);
         return compared;
     }
     
     @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-    @Benchmark
-    public Comparator<Personne> benchmarkComparatorAnonymousClassCreateOnly(PersonnesContainer c) {
+//    @Benchmark
+    public Comparator<Personne> createOnlyAnonymousClass(PersonnesContainer c) {
         // Here is my benchmark code (sort array)
         Comparator<Personne> comparator = new Comparator<Personne>() {
             public int compare(Personne p1, Personne p2) {
@@ -115,8 +108,8 @@ public class AnonymousClassComparatorBenchmark {
     
     @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-    @Benchmark
-    public int benchmarkComparatorAnonymousClass(PersonnesContainer c) {
+//    @Benchmark
+    public int createAndInvokeAnonymousClass(PersonnesContainer c) {
         // Here is my benchmark code (sort array)
         Comparator<Personne> comparator = new Comparator<Personne>() {
             public int compare(Personne p1, Personne p2) {

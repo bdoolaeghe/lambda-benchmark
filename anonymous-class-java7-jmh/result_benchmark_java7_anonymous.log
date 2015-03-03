@@ -1,0 +1,491 @@
+# JMH 1.5.2 (released 21 days ago)
+# VM invoker: /home/my/dev/java/jdk1.7.0_75/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 5000)
+
+# Run progress: 0,00% complete, ETA 00:10:40
+# Fork: 1 of 1
+# Warmup Iteration   1: 2082,721 ops/s
+# Warmup Iteration   2: 2665,348 ops/s
+# Warmup Iteration   3: 2684,248 ops/s
+# Warmup Iteration   4: 2654,434 ops/s
+# Warmup Iteration   5: 2668,952 ops/s
+# Warmup Iteration   6: 2621,793 ops/s
+# Warmup Iteration   7: 2633,825 ops/s
+# Warmup Iteration   8: 2693,166 ops/s
+# Warmup Iteration   9: 2644,859 ops/s
+# Warmup Iteration  10: 2585,624 ops/s
+Iteration   1: 2668,997 ops/s
+Iteration   2: 2665,132 ops/s
+Iteration   3: 2681,380 ops/s
+Iteration   4: 2660,770 ops/s
+Iteration   5: 2679,839 ops/s
+Iteration   6: 2673,428 ops/s
+Iteration   7: 2666,882 ops/s
+Iteration   8: 2672,486 ops/s
+Iteration   9: 2668,897 ops/s
+Iteration  10: 2529,449 ops/s
+Iteration  11: 2666,736 ops/s
+Iteration  12: 2693,343 ops/s
+Iteration  13: 2695,686 ops/s
+Iteration  14: 2687,656 ops/s
+Iteration  15: 2655,063 ops/s
+Iteration  16: 2685,443 ops/s
+Iteration  17: 2672,540 ops/s
+Iteration  18: 2681,687 ops/s
+Iteration  19: 2700,450 ops/s
+Iteration  20: 2676,707 ops/s
+Iteration  21: 2690,807 ops/s
+Iteration  22: 2683,985 ops/s
+Iteration  23: 2683,579 ops/s
+Iteration  24: 2684,986 ops/s
+Iteration  25: 2688,935 ops/s
+Iteration  26: 2689,012 ops/s
+Iteration  27: 2660,530 ops/s
+Iteration  28: 2658,364 ops/s
+Iteration  29: 2625,332 ops/s
+Iteration  30: 2610,195 ops/s
+
+
+Result: 2668,610 ±(99.9%) 21,745 ops/s [Average]
+  Statistics: (min, avg, max) = (2529,449, 2668,610, 2700,450), stdev = 32,547
+  Confidence interval (99.9%): [2646,865, 2690,355]
+
+
+# JMH 1.5.2 (released 21 days ago)
+# VM invoker: /home/my/dev/java/jdk1.7.0_75/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 10000)
+
+# Run progress: 12,50% complete, ETA 00:10:23
+# Fork: 1 of 1
+# Warmup Iteration   1: 855,979 ops/s
+# Warmup Iteration   2: 1123,490 ops/s
+# Warmup Iteration   3: 1074,621 ops/s
+# Warmup Iteration   4: 1096,041 ops/s
+# Warmup Iteration   5: 1096,395 ops/s
+# Warmup Iteration   6: 1079,206 ops/s
+# Warmup Iteration   7: 1012,492 ops/s
+# Warmup Iteration   8: 1074,657 ops/s
+# Warmup Iteration   9: 1061,072 ops/s
+# Warmup Iteration  10: 1054,136 ops/s
+Iteration   1: 1046,736 ops/s
+Iteration   2: 1044,581 ops/s
+Iteration   3: 1038,769 ops/s
+Iteration   4: 1029,461 ops/s
+Iteration   5: 1028,886 ops/s
+Iteration   6: 1020,222 ops/s
+Iteration   7: 1007,943 ops/s
+Iteration   8: 1023,520 ops/s
+Iteration   9: 1006,868 ops/s
+Iteration  10: 1005,996 ops/s
+Iteration  11: 1000,582 ops/s
+Iteration  12: 997,943 ops/s
+Iteration  13: 1000,458 ops/s
+Iteration  14: 985,278 ops/s
+Iteration  15: 989,138 ops/s
+Iteration  16: 960,485 ops/s
+Iteration  17: 947,899 ops/s
+Iteration  18: 973,983 ops/s
+Iteration  19: 976,626 ops/s
+Iteration  20: 957,486 ops/s
+Iteration  21: 961,606 ops/s
+Iteration  22: 961,932 ops/s
+Iteration  23: 950,849 ops/s
+Iteration  24: 944,339 ops/s
+Iteration  25: 939,756 ops/s
+Iteration  26: 944,273 ops/s
+Iteration  27: 925,705 ops/s
+Iteration  28: 934,504 ops/s
+Iteration  29: 949,683 ops/s
+Iteration  30: 933,078 ops/s
+
+
+Result: 982,953 ±(99.9%) 24,628 ops/s [Average]
+  Statistics: (min, avg, max) = (925,705, 982,953, 1046,736), stdev = 36,862
+  Confidence interval (99.9%): [958,325, 1007,581]
+
+
+# JMH 1.5.2 (released 21 days ago)
+# VM invoker: /home/my/dev/java/jdk1.7.0_75/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 50000)
+
+# Run progress: 25,00% complete, ETA 00:08:56
+# Fork: 1 of 1
+# Warmup Iteration   1: 76,946 ops/s
+# Warmup Iteration   2: 118,463 ops/s
+# Warmup Iteration   3: 118,402 ops/s
+# Warmup Iteration   4: 118,534 ops/s
+# Warmup Iteration   5: 118,289 ops/s
+# Warmup Iteration   6: 118,932 ops/s
+# Warmup Iteration   7: 117,168 ops/s
+# Warmup Iteration   8: 119,664 ops/s
+# Warmup Iteration   9: 119,061 ops/s
+# Warmup Iteration  10: 118,613 ops/s
+Iteration   1: 116,980 ops/s
+Iteration   2: 119,125 ops/s
+Iteration   3: 116,589 ops/s
+Iteration   4: 117,595 ops/s
+Iteration   5: 116,879 ops/s
+Iteration   6: 118,099 ops/s
+Iteration   7: 117,931 ops/s
+Iteration   8: 116,426 ops/s
+Iteration   9: 117,035 ops/s
+Iteration  10: 111,461 ops/s
+Iteration  11: 118,600 ops/s
+Iteration  12: 116,749 ops/s
+Iteration  13: 117,024 ops/s
+Iteration  14: 117,675 ops/s
+Iteration  15: 116,858 ops/s
+Iteration  16: 116,691 ops/s
+Iteration  17: 117,955 ops/s
+Iteration  18: 117,745 ops/s
+Iteration  19: 117,688 ops/s
+Iteration  20: 115,988 ops/s
+Iteration  21: 117,167 ops/s
+Iteration  22: 115,593 ops/s
+Iteration  23: 117,861 ops/s
+Iteration  24: 115,998 ops/s
+Iteration  25: 115,393 ops/s
+Iteration  26: 114,284 ops/s
+Iteration  27: 112,395 ops/s
+Iteration  28: 116,709 ops/s
+Iteration  29: 116,680 ops/s
+Iteration  30: 116,766 ops/s
+
+
+Result: 116,665 ±(99.9%) 1,082 ops/s [Average]
+  Statistics: (min, avg, max) = (111,461, 116,665, 119,125), stdev = 1,620
+  Confidence interval (99.9%): [115,582, 117,747]
+
+
+# JMH 1.5.2 (released 21 days ago)
+# VM invoker: /home/my/dev/java/jdk1.7.0_75/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 100000)
+
+# Run progress: 37,50% complete, ETA 00:07:32
+# Fork: 1 of 1
+# Warmup Iteration   1: 41,450 ops/s
+# Warmup Iteration   2: 49,958 ops/s
+# Warmup Iteration   3: 49,773 ops/s
+# Warmup Iteration   4: 49,426 ops/s
+# Warmup Iteration   5: 46,714 ops/s
+# Warmup Iteration   6: 48,746 ops/s
+# Warmup Iteration   7: 49,113 ops/s
+# Warmup Iteration   8: 48,955 ops/s
+# Warmup Iteration   9: 48,944 ops/s
+# Warmup Iteration  10: 49,147 ops/s
+Iteration   1: 48,602 ops/s
+Iteration   2: 48,419 ops/s
+Iteration   3: 48,715 ops/s
+Iteration   4: 49,095 ops/s
+Iteration   5: 49,146 ops/s
+Iteration   6: 48,876 ops/s
+Iteration   7: 49,040 ops/s
+Iteration   8: 48,784 ops/s
+Iteration   9: 49,032 ops/s
+Iteration  10: 49,369 ops/s
+Iteration  11: 48,951 ops/s
+Iteration  12: 48,769 ops/s
+Iteration  13: 48,670 ops/s
+Iteration  14: 48,775 ops/s
+Iteration  15: 48,790 ops/s
+Iteration  16: 48,904 ops/s
+Iteration  17: 48,724 ops/s
+Iteration  18: 48,782 ops/s
+Iteration  19: 48,866 ops/s
+Iteration  20: 46,535 ops/s
+Iteration  21: 48,994 ops/s
+Iteration  22: 48,750 ops/s
+Iteration  23: 48,235 ops/s
+Iteration  24: 48,157 ops/s
+Iteration  25: 47,725 ops/s
+Iteration  26: 47,952 ops/s
+Iteration  27: 48,390 ops/s
+Iteration  28: 48,513 ops/s
+Iteration  29: 48,785 ops/s
+Iteration  30: 49,071 ops/s
+
+
+Result: 48,647 ±(99.9%) 0,358 ops/s [Average]
+  Statistics: (min, avg, max) = (46,535, 48,647, 49,369), stdev = 0,535
+  Confidence interval (99.9%): [48,290, 49,005]
+
+
+# JMH 1.5.2 (released 21 days ago)
+# VM invoker: /home/my/dev/java/jdk1.7.0_75/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 200000)
+
+# Run progress: 50,00% complete, ETA 00:06:08
+# Fork: 1 of 1
+# Warmup Iteration   1: 16,399 ops/s
+# Warmup Iteration   2: 20,459 ops/s
+# Warmup Iteration   3: 20,644 ops/s
+# Warmup Iteration   4: 20,581 ops/s
+# Warmup Iteration   5: 20,295 ops/s
+# Warmup Iteration   6: 20,593 ops/s
+# Warmup Iteration   7: 20,532 ops/s
+# Warmup Iteration   8: 20,313 ops/s
+# Warmup Iteration   9: 20,518 ops/s
+# Warmup Iteration  10: 20,189 ops/s
+Iteration   1: 20,340 ops/s
+Iteration   2: 20,210 ops/s
+Iteration   3: 19,147 ops/s
+Iteration   4: 20,225 ops/s
+Iteration   5: 20,328 ops/s
+Iteration   6: 20,175 ops/s
+Iteration   7: 20,466 ops/s
+Iteration   8: 20,401 ops/s
+Iteration   9: 20,299 ops/s
+Iteration  10: 20,210 ops/s
+Iteration  11: 20,386 ops/s
+Iteration  12: 20,441 ops/s
+Iteration  13: 20,309 ops/s
+Iteration  14: 20,409 ops/s
+Iteration  15: 20,211 ops/s
+Iteration  16: 20,412 ops/s
+Iteration  17: 20,262 ops/s
+Iteration  18: 20,340 ops/s
+Iteration  19: 20,263 ops/s
+Iteration  20: 20,372 ops/s
+Iteration  21: 20,333 ops/s
+Iteration  22: 20,305 ops/s
+Iteration  23: 20,291 ops/s
+Iteration  24: 20,380 ops/s
+Iteration  25: 20,454 ops/s
+Iteration  26: 19,502 ops/s
+Iteration  27: 20,219 ops/s
+Iteration  28: 20,278 ops/s
+Iteration  29: 20,370 ops/s
+Iteration  30: 20,206 ops/s
+
+
+Result: 20,251 ±(99.9%) 0,180 ops/s [Average]
+  Statistics: (min, avg, max) = (19,147, 20,251, 20,466), stdev = 0,269
+  Confidence interval (99.9%): [20,072, 20,431]
+
+
+# JMH 1.5.2 (released 21 days ago)
+# VM invoker: /home/my/dev/java/jdk1.7.0_75/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 400000)
+
+# Run progress: 62,50% complete, ETA 00:04:46
+# Fork: 1 of 1
+# Warmup Iteration   1: 4,197 ops/s
+# Warmup Iteration   2: 9,458 ops/s
+# Warmup Iteration   3: 9,414 ops/s
+# Warmup Iteration   4: 9,446 ops/s
+# Warmup Iteration   5: 9,483 ops/s
+# Warmup Iteration   6: 9,391 ops/s
+# Warmup Iteration   7: 9,378 ops/s
+# Warmup Iteration   8: 9,208 ops/s
+# Warmup Iteration   9: 9,014 ops/s
+# Warmup Iteration  10: 9,291 ops/s
+Iteration   1: 8,613 ops/s
+Iteration   2: 9,091 ops/s
+Iteration   3: 9,313 ops/s
+Iteration   4: 8,470 ops/s
+Iteration   5: 9,279 ops/s
+Iteration   6: 9,366 ops/s
+Iteration   7: 9,352 ops/s
+Iteration   8: 9,388 ops/s
+Iteration   9: 9,311 ops/s
+Iteration  10: 9,315 ops/s
+Iteration  11: 9,217 ops/s
+Iteration  12: 9,358 ops/s
+Iteration  13: 9,299 ops/s
+Iteration  14: 9,009 ops/s
+Iteration  15: 9,356 ops/s
+Iteration  16: 9,404 ops/s
+Iteration  17: 9,434 ops/s
+Iteration  18: 9,377 ops/s
+Iteration  19: 9,363 ops/s
+Iteration  20: 9,560 ops/s
+Iteration  21: 9,190 ops/s
+Iteration  22: 9,410 ops/s
+Iteration  23: 8,705 ops/s
+Iteration  24: 9,339 ops/s
+Iteration  25: 9,338 ops/s
+Iteration  26: 9,497 ops/s
+Iteration  27: 9,387 ops/s
+Iteration  28: 9,532 ops/s
+Iteration  29: 9,452 ops/s
+Iteration  30: 9,267 ops/s
+
+
+Result: 9,266 ±(99.9%) 0,171 ops/s [Average]
+  Statistics: (min, avg, max) = (8,470, 9,266, 9,560), stdev = 0,256
+  Confidence interval (99.9%): [9,096, 9,437]
+
+
+# JMH 1.5.2 (released 21 days ago)
+# VM invoker: /home/my/dev/java/jdk1.7.0_75/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 800000)
+
+# Run progress: 75,00% complete, ETA 00:03:22
+# Fork: 1 of 1
+# Warmup Iteration   1: 3,642 ops/s
+# Warmup Iteration   2: 4,345 ops/s
+# Warmup Iteration   3: 4,196 ops/s
+# Warmup Iteration   4: 4,323 ops/s
+# Warmup Iteration   5: 4,391 ops/s
+# Warmup Iteration   6: 4,375 ops/s
+# Warmup Iteration   7: 4,318 ops/s
+# Warmup Iteration   8: 4,358 ops/s
+# Warmup Iteration   9: 4,390 ops/s
+# Warmup Iteration  10: 4,428 ops/s
+Iteration   1: 4,405 ops/s
+Iteration   2: 4,401 ops/s
+Iteration   3: 4,413 ops/s
+Iteration   4: 4,415 ops/s
+Iteration   5: 4,445 ops/s
+Iteration   6: 4,409 ops/s
+Iteration   7: 4,419 ops/s
+Iteration   8: 4,438 ops/s
+Iteration   9: 4,382 ops/s
+Iteration  10: 4,312 ops/s
+Iteration  11: 4,132 ops/s
+Iteration  12: 4,278 ops/s
+Iteration  13: 4,372 ops/s
+Iteration  14: 4,413 ops/s
+Iteration  15: 4,313 ops/s
+Iteration  16: 4,372 ops/s
+Iteration  17: 4,442 ops/s
+Iteration  18: 4,355 ops/s
+Iteration  19: 4,349 ops/s
+Iteration  20: 4,414 ops/s
+Iteration  21: 4,415 ops/s
+Iteration  22: 4,427 ops/s
+Iteration  23: 4,393 ops/s
+Iteration  24: 4,403 ops/s
+Iteration  25: 4,406 ops/s
+Iteration  26: 4,409 ops/s
+Iteration  27: 4,416 ops/s
+Iteration  28: 4,429 ops/s
+Iteration  29: 4,413 ops/s
+Iteration  30: 4,435 ops/s
+
+
+Result: 4,387 ±(99.9%) 0,042 ops/s [Average]
+  Statistics: (min, avg, max) = (4,132, 4,387, 4,445), stdev = 0,063
+  Confidence interval (99.9%): [4,346, 4,429]
+
+
+# JMH 1.5.2 (released 21 days ago)
+# VM invoker: /home/my/dev/java/jdk1.7.0_75/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 1200000)
+
+# Run progress: 87,50% complete, ETA 00:01:53
+# Fork: 1 of 1
+# Warmup Iteration   1: 2,616 ops/s
+# Warmup Iteration   2: 2,758 ops/s
+# Warmup Iteration   3: 2,748 ops/s
+# Warmup Iteration   4: 2,707 ops/s
+# Warmup Iteration   5: 2,710 ops/s
+# Warmup Iteration   6: 2,710 ops/s
+# Warmup Iteration   7: 2,721 ops/s
+# Warmup Iteration   8: 2,719 ops/s
+# Warmup Iteration   9: 2,710 ops/s
+# Warmup Iteration  10: 2,711 ops/s
+Iteration   1: 2,674 ops/s
+Iteration   2: 2,685 ops/s
+Iteration   3: 2,690 ops/s
+Iteration   4: 2,698 ops/s
+Iteration   5: 2,698 ops/s
+Iteration   6: 2,733 ops/s
+Iteration   7: 2,730 ops/s
+Iteration   8: 2,744 ops/s
+Iteration   9: 2,756 ops/s
+Iteration  10: 2,749 ops/s
+Iteration  11: 2,723 ops/s
+Iteration  12: 2,724 ops/s
+Iteration  13: 2,748 ops/s
+Iteration  14: 2,743 ops/s
+Iteration  15: 2,750 ops/s
+Iteration  16: 2,733 ops/s
+Iteration  17: 2,715 ops/s
+Iteration  18: 2,722 ops/s
+Iteration  19: 2,756 ops/s
+Iteration  20: 2,731 ops/s
+Iteration  21: 2,742 ops/s
+Iteration  22: 2,739 ops/s
+Iteration  23: 2,748 ops/s
+Iteration  24: 2,769 ops/s
+Iteration  25: 2,761 ops/s
+Iteration  26: 2,754 ops/s
+Iteration  27: 2,739 ops/s
+Iteration  28: 2,606 ops/s
+Iteration  29: 2,747 ops/s
+Iteration  30: 2,776 ops/s
+
+
+Result: 2,729 ±(99.9%) 0,023 ops/s [Average]
+  Statistics: (min, avg, max) = (2,606, 2,729, 2,776), stdev = 0,034
+  Confidence interval (99.9%): [2,707, 2,752]
+
+
+# Run complete. Total time: 00:16:59
+
+Benchmark                                  (nbPersons)   Mode  Cnt     Score    Error  Units
+AnonymousClassSortBenchmark.benchmarkSort         5000  thrpt   30  2668,610 ± 21,745  ops/s
+AnonymousClassSortBenchmark.benchmarkSort        10000  thrpt   30   982,953 ± 24,628  ops/s
+AnonymousClassSortBenchmark.benchmarkSort        50000  thrpt   30   116,665 ±  1,082  ops/s
+AnonymousClassSortBenchmark.benchmarkSort       100000  thrpt   30    48,647 ±  0,358  ops/s
+AnonymousClassSortBenchmark.benchmarkSort       200000  thrpt   30    20,251 ±  0,180  ops/s
+AnonymousClassSortBenchmark.benchmarkSort       400000  thrpt   30     9,266 ±  0,171  ops/s
+AnonymousClassSortBenchmark.benchmarkSort       800000  thrpt   30     4,387 ±  0,042  ops/s
+AnonymousClassSortBenchmark.benchmarkSort      1200000  thrpt   30     2,729 ±  0,023  ops/s
