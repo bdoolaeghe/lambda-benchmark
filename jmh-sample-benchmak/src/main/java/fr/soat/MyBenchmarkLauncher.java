@@ -7,14 +7,14 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 public final class MyBenchmarkLauncher {
 
-	private MyBenchmarkLauncher() {
-	}
+    private MyBenchmarkLauncher() {
+    }
 
-	public static void main(final String[] _args) throws RunnerException {
-		Options opt = new OptionsBuilder()
-				.include("fr.soat.MyBenchmark")
-				.build();
+    public static void main(final String[] _args) throws RunnerException {
+        Options opt = new OptionsBuilder()
+                            .include("fr.soat.MyBenchmark")
+                            .build();
 
-		new Runner(opt).run();
-	}
+        new Runner(opt).run();
+    }
 }

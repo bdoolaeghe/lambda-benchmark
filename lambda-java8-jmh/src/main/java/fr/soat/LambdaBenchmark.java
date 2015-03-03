@@ -54,17 +54,17 @@ import cern.colt.Sorting;
 
 @BenchmarkMode(Mode.SampleTime)
 @OutputTimeUnit(TimeUnit.SECONDS)
-@Fork(value = 1, jvmArgsPrepend = {"-server", "-Xmx512m"} )
+@Fork(value = 1, jvmArgsPrepend = { "-server", "-Xmx512m" })
 @Threads(1)
-//@Fork(value = 0)
+// @Fork(value = 0)
 public class LambdaBenchmark {
 
     @State(Scope.Benchmark)
     public static class PersonnesContainer {
 
-        
         // measure for a set of dataset...
-//        @Param({ "5000", "10000", "25000", "50000", "100000", "200000", "400000", "800000" })
+        // @Param({ "5000", "10000", "25000", "50000", "100000", "200000",
+        // "400000", "800000" })
         @Param({ "1000000" })
         int nbPersons;
 
@@ -73,10 +73,11 @@ public class LambdaBenchmark {
 
         // the unsorted "read only" array of personne
         private Personne[] unsortedPersonneArray;
-        
+
         @Setup(Level.Trial)
         public void readPersonnesFromFile() throws IOException {
-            System.out.println("JRE version : " + System.getProperty("java.version") + " from " + System.getProperty("java.home"));
+            System.out.println("JRE version : " + System.getProperty("java.version") + " from "
+                    + System.getProperty("java.home"));
             // one time at benchark init, read list of personnes
             unsortedPersonneArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
         }
@@ -87,21 +88,18 @@ public class LambdaBenchmark {
             // restore unsorted array of personnes before sorting
             personneToSortArray = Arrays.copyOf(unsortedPersonneArray, unsortedPersonneArray.length);
         }
-        
+
     }
-    
 
     @Warmup(iterations = 20, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 10, time = 3000, timeUnit = TimeUnit.MILLISECONDS)
-//    @Benchmark
-	public Personne[] benchmarkSort(PersonnesContainer c) {
-		// Here is my benchmark code (sort array)
-		// use a lambda
-//        Arrays.sort(
-        Sorting.quickSort(
-		c.personneToSortArray, Comparator
-		                                    .comparing((Personne p) -> p.getNom()));
-//		                                    .thenComparing((Personne p) -> p.getPrenom()));
-		return c.personneToSortArray;
-	}
+    // @Benchmark
+    public Personne[] benchmarkSort(PersonnesContainer c) {
+        // Here is my benchmark code (sort array)
+        // use a lambda
+        // Arrays.sort(
+        Sorting.quickSort(c.personneToSortArray, Comparator.comparing((Personne p) -> p.getNom()));
+        // .thenComparing((Personne p) -> p.getPrenom()));
+        return c.personneToSortArray;
+    }
 }

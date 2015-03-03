@@ -7,15 +7,15 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 public final class BenchmarkLauncher {
 
-	private BenchmarkLauncher() {
-	}
- 
-	public static void main(final String[] _args) throws RunnerException {
-		Options opt = new OptionsBuilder()
-				.include("fr.soat.LambdaBenchmark")
-				.shouldDoGC(true)
-				.build();
+    private BenchmarkLauncher() {
+    }
 
-		new Runner(opt).run();
-	}
+    public static void main(final String[] _args) throws RunnerException {
+        Options opt = new OptionsBuilder()
+                            .include("fr.soat.LambdaBenchmark")
+                            .shouldDoGC(true)
+                            .build();
+
+        new Runner(opt).run();
+    }
 }

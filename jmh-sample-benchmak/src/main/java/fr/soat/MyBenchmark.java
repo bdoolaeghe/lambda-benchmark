@@ -43,7 +43,6 @@ import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Warmup;
 
-
 @BenchmarkMode(Mode.SampleTime)
 @Warmup(iterations = 8, time = 200, timeUnit = TimeUnit.MILLISECONDS)
 @Measurement(iterations = 20, time = 200, timeUnit = TimeUnit.MILLISECONDS)
@@ -51,34 +50,34 @@ import org.openjdk.jmh.annotations.Warmup;
 @Fork(1)
 public class MyBenchmark {
 
-	@State(Scope.Benchmark)
-	public static class DataContainer {
-		@Param({"0.000000000001","0.000000001","0.000001","0.001","0.1","1", "10", "100", "1000", "1000000", "1000000000", "1000000000000" })
-		double x;
-	}
+    @State(Scope.Benchmark)
+    public static class DataContainer {
+        @Param({ "0.000000000001", "0.000000001", "0.000001", "0.001", "0.1", 
+            "1", "10", "100", "1000", "1000000", "1000000000", "1000000000000" })
+        double x;
+    }
 
-	@Benchmark
-	public double benchmarkLogarithmJdk(DataContainer data) {
-		double logN = java.lang.Math.log(data.x);
-		return logN;
-	}
+    @Benchmark
+    public double benchmarkLogarithmJdk(DataContainer data) {
+        double logN = java.lang.Math.log(data.x);
+        return logN;
+    }
 
-	@Benchmark
-	public double benchmarkLogarithmApacheCommon(DataContainer data) {
-		double logN = org.apache.commons.math3.util.FastMath.log(data.x);
-		return logN;
-	}
+    @Benchmark
+    public double benchmarkLogarithmApacheCommon(DataContainer data) {
+        double logN = org.apache.commons.math3.util.FastMath.log(data.x);
+        return logN;
+    }
 
+    @Benchmark
+    public double benchmarkLogarithmJafama(DataContainer data) {
+        double logN = odk.lang.FastMath.log(data.x);
+        return logN;
+    }
 
-	@Benchmark
-	public double benchmarkLogarithmJafama(DataContainer data) {
-		double logN = odk.lang.FastMath.log(data.x);
-		return logN;
-	}
-
-	@Benchmark
-	public double benchmarkLogarithmJafamaLogQuick(DataContainer data) {
-		double logN = odk.lang.FastMath.logQuick(data.x);
-		return logN;
-	}
+    @Benchmark
+    public double benchmarkLogarithmJafamaLogQuick(DataContainer data) {
+        double logN = odk.lang.FastMath.logQuick(data.x);
+        return logN;
+    }
 }

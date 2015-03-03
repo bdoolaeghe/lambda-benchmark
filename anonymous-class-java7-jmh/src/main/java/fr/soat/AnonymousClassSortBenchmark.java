@@ -52,7 +52,7 @@ import org.openjdk.jmh.annotations.Warmup;
 
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.SECONDS)
-@Fork(value = 1, jvmArgsPrepend = {"-server", "-Xmx2g", "-XX:+TieredCompilation"} )
+@Fork(value = 1, jvmArgsPrepend = { "-server", "-Xmx2g", "-XX:+TieredCompilation" })
 @Threads(4)
 public class AnonymousClassSortBenchmark {
 
@@ -60,7 +60,7 @@ public class AnonymousClassSortBenchmark {
     public static class PersonnesContainer {
 
         // measure for a set of dataset...
-    	@Param({"5000", "10000", "50000", "100000", "200000", "400000", "800000", "1200000"})
+        @Param({ "5000", "10000", "50000", "100000", "200000", "400000", "800000", "1200000" })
         int nbPersons;
 
         // the array of peronne to sort during invokation work
@@ -68,10 +68,12 @@ public class AnonymousClassSortBenchmark {
 
         // the unsorted "read only" array of personne
         private Personne[] unsortedPersonneArray;
-        
+
         @Setup(Level.Trial)
         public void readPersonnesFromFile() throws IOException {
-//            System.out.println("JRE version : " + System.getProperty("java.version") + " from " + System.getProperty("java.home"));
+            // System.out.println("JRE version : " +
+            // System.getProperty("java.version") + " from " +
+            // System.getProperty("java.home"));
             // one time at benchark init, read list of personnes
             unsortedPersonneArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
         }
@@ -82,31 +84,29 @@ public class AnonymousClassSortBenchmark {
             // restore unsorted array of personnes before sorting
             personneToSortArray = Arrays.copyOf(unsortedPersonneArray, unsortedPersonneArray.length);
         }
-        
+
     }
-    
+
     @Warmup(iterations = 10, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 30, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
     @Benchmark
-	public Personne[] benchmarkSort(PersonnesContainer c) {
-		// Here is my benchmark code (sort array)
-		// use an anonymous class
-        Arrays.sort(
-        		c.personneToSortArray, 
-        		new Comparator<Personne>() {
-					public int compare(Personne p1, Personne p2) {
-						int nameComparaison = p1.getNom().compareTo(p2.getNom());
-						if (nameComparaison != 0) {
-						    // noms are different
-						    return nameComparaison;
-						} else {
-						    // noms are same, we need to comapre prenoms
-						    return p1.getPrenom().compareTo(p2.getPrenom());
-						}
-					}
-				});
-    	
-		return c.personneToSortArray;
-	}
+    public Personne[] benchmarkSort(PersonnesContainer c) {
+        // Here is my benchmark code (sort array)
+        // use an anonymous class
+        Arrays.sort(c.personneToSortArray, new Comparator<Personne>() {
+            public int compare(Personne p1, Personne p2) {
+                int nameComparaison = p1.getNom().compareTo(p2.getNom());
+                if (nameComparaison != 0) {
+                    // noms are different
+                    return nameComparaison;
+                } else {
+                    // noms are same, we need to comapre prenoms
+                    return p1.getPrenom().compareTo(p2.getPrenom());
+                }
+            }
+        });
+
+        return c.personneToSortArray;
+    }
 
 }

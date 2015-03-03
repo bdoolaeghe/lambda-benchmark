@@ -34,7 +34,6 @@ package fr.soat;
 import java.util.Comparator;
 import java.util.concurrent.TimeUnit;
 
-import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
 import org.openjdk.jmh.annotations.Measurement;
@@ -47,50 +46,47 @@ import org.openjdk.jmh.annotations.Warmup;
 
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-@Fork(value = 1, jvmArgsPrepend = {"-server", "-Xmx1g", "-XX:+TieredCompilation"} )
+@Fork(value = 1, jvmArgsPrepend = { "-server", "-Xmx1g", "-XX:+TieredCompilation" })
 @Threads(4)
-//@Fork(value = 0)
+// @Fork(value = 0)
 public class LambdaComparatorBenchmark {
 
     @State(Scope.Benchmark)
     public static class PersonnesContainer {
 
         Personne p1 = new Personne("Jean-claude", "DUSS");
-        
+
         Personne p2 = new Personne("Miguel", "DUSS");
-        
-        Comparator<Personne> comparator = Comparator
-        		.comparing((Personne p) -> p.getNom())
-        		.thenComparing((Personne p) -> p.getPrenom());
-        
-    }
-    
-    @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-//    @Benchmark
-    public int invokeOnlyLambda(PersonnesContainer c) {
-        int compared = c.comparator.compare(c.p1, c.p2);
-        return compared;
-    }
-    
-    @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-//    @Benchmark
-    public Comparator<Personne> createOnlyLambda(PersonnesContainer c) {
-        // use a lambda
-        return Comparator.comparing((Personne p) -> p.getNom())
-		                 .thenComparing((Personne p) -> p.getPrenom());
+
+        Comparator<Personne> comparator = Comparator.comparing((Personne p) -> p.getNom()).thenComparing(
+                (Personne p) -> p.getPrenom());
+
     }
 
     @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-//    @Benchmark
-	public int createAndInvokeLambda(PersonnesContainer c) {
-		// Here is my benchmark code (sort array)
-		// use a lambda
-        int compared = Comparator.comparing((Personne p) -> p.getNom())
-		                         .thenComparing((Personne p) -> p.getPrenom())
-		                         .compare(c.p1, c.p2);
+    // @Benchmark
+    public int invokeOnlyLambda(PersonnesContainer c) {
+        int compared = c.comparator.compare(c.p1, c.p2);
         return compared;
-	}
+    }
+
+    @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
+    @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
+    // @Benchmark
+    public Comparator<Personne> createOnlyLambda(PersonnesContainer c) {
+        // use a lambda
+        return Comparator.comparing((Personne p) -> p.getNom()).thenComparing((Personne p) -> p.getPrenom());
+    }
+
+    @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
+    @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
+    // @Benchmark
+    public int createAndInvokeLambda(PersonnesContainer c) {
+        // Here is my benchmark code (sort array)
+        // use a lambda
+        int compared = Comparator.comparing((Personne p) -> p.getNom()).thenComparing((Personne p) -> p.getPrenom())
+                .compare(c.p1, c.p2);
+        return compared;
+    }
 }

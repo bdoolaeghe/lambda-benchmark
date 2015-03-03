@@ -47,47 +47,44 @@ import org.openjdk.jmh.annotations.Warmup;
 
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
-@Fork(value = 1, jvmArgsPrepend = {"-server", "-Xmx1g", "-XX:+TieredCompilation"} )
+@Fork(value = 1, jvmArgsPrepend = { "-server", "-Xmx1g", "-XX:+TieredCompilation" })
 @Threads(4)
-//@Fork(value = 0)
+// @Fork(value = 0)
 public class AnonymousClassComparatorBenchmark {
 
     @State(Scope.Benchmark)
     public static class PersonnesContainer {
 
         Personne p1 = new Personne("Jean-claude", "DUSS");
-        
+
         Personne p2 = new Personne("Miguel", "DUSS");
-        
+
         Comparator<Personne> comparator = new Comparator<Personne>() {
-        	public int compare(Personne p1, Personne p2) {
-        		int nameComparaison = p1.getNom().compareTo(p2.getNom());
-        		if (nameComparaison != 0) {
-        			// noms are different
-        			return nameComparaison;
-        		} else {
-        			// noms are same, we need to comapre prenoms
-        			return p1.getPrenom().compareTo(p2.getPrenom());
-        		}
-        	}
+            public int compare(Personne p1, Personne p2) {
+                int nameComparaison = p1.getNom().compareTo(p2.getNom());
+                if (nameComparaison != 0) {
+                    // noms are different
+                    return nameComparaison;
+                } else {
+                    // noms are same, we need to comapre prenoms
+                    return p1.getPrenom().compareTo(p2.getPrenom());
+                }
+            }
         };
 
     }
-    
-
-
 
     @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-//    @Benchmark
+    // @Benchmark
     public int invokeOnlyAnonymousClass(PersonnesContainer c) {
         int compared = c.comparator.compare(c.p1, c.p2);
         return compared;
     }
-    
+
     @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-//    @Benchmark
+    // @Benchmark
     public Comparator<Personne> createOnlyAnonymousClass(PersonnesContainer c) {
         // Here is my benchmark code (sort array)
         Comparator<Personne> comparator = new Comparator<Personne>() {
@@ -105,10 +102,10 @@ public class AnonymousClassComparatorBenchmark {
 
         return comparator;
     }
-    
+
     @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
-//    @Benchmark
+    // @Benchmark
     public int createAndInvokeAnonymousClass(PersonnesContainer c) {
         // Here is my benchmark code (sort array)
         Comparator<Personne> comparator = new Comparator<Personne>() {
@@ -123,7 +120,7 @@ public class AnonymousClassComparatorBenchmark {
                 }
             }
         };
-        
+
         int compared = comparator.compare(c.p1, c.p2);
         return compared;
     }

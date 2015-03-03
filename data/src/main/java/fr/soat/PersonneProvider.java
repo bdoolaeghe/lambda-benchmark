@@ -5,10 +5,11 @@ import java.io.File;
 import java.io.FileReader;
 
 public class PersonneProvider {
-    
+
     /**
      * load from file an array of {@link Personne}
-     * @param filePath  
+     * 
+     * @param filePath
      * @param nbPersons
      * @return a new arary
      */
@@ -24,13 +25,12 @@ public class PersonneProvider {
         } catch (Exception e) {
             throw new RuntimeException("Can not read " + nbPersons + " personnes from " + filePath, e);
         }
-        
+
         return array;
     }
-    
-//    public static void main(String[] args) {
-//        load("personnes.txt", 2);
-//    }
-    
-    
+
+    // public static void main(String[] args) {
+    // load("personnes.txt", 2);
+    // }
+
 }

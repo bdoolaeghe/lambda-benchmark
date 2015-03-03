@@ -54,7 +54,7 @@ import cern.colt.Sorting;
 
 @BenchmarkMode(Mode.SampleTime)
 @OutputTimeUnit(TimeUnit.SECONDS)
-@Fork(value = 1, jvmArgsPrepend = {"-server", "-Xmx512m"} )
+@Fork(value = 1, jvmArgsPrepend = { "-server", "-Xmx512m" })
 @Threads(1)
 public class AnonymousClassBenchmark {
 
@@ -62,7 +62,8 @@ public class AnonymousClassBenchmark {
     public static class PersonnesContainer {
 
         // measure for a set of dataset...
-//        @Param({ "5000", "10000", "25000", "50000", "100000", "200000", "400000", "800000" })
+        // @Param({ "5000", "10000", "25000", "50000", "100000", "200000",
+        // "400000", "800000" })
         @Param({ "1000000" })
         int nbPersons;
 
@@ -71,10 +72,11 @@ public class AnonymousClassBenchmark {
 
         // the unsorted "read only" array of personne
         private Personne[] unsortedPersonneArray;
-        
+
         @Setup(Level.Trial)
         public void readPersonnesFromFile() throws IOException {
-            System.out.println("JRE version : " + System.getProperty("java.version") + " from " + System.getProperty("java.home"));
+            System.out.println("JRE version : " + System.getProperty("java.version") + " from "
+                    + System.getProperty("java.home"));
             // one time at benchark init, read list of personnes
             unsortedPersonneArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
         }
@@ -85,32 +87,30 @@ public class AnonymousClassBenchmark {
             // restore unsorted array of personnes before sorting
             personneToSortArray = Arrays.copyOf(unsortedPersonneArray, unsortedPersonneArray.length);
         }
-        
+
     }
-    
 
     @Warmup(iterations = 20, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
     @Measurement(iterations = 10, time = 3000, timeUnit = TimeUnit.MILLISECONDS)
-//    @Benchmark
+    // @Benchmark
     public Personne[] benchmarkSort(PersonnesContainer c) {
-		// Here is my benchmark code (sort array)
-		// use an anonymous class to immplement a Comparator
+        // Here is my benchmark code (sort array)
+        // use an anonymous class to immplement a Comparator
         // Arrays.sort(
-        Sorting.quickSort(
-		            c.personneToSortArray, new Comparator<Personne>() {
-			public int compare(Personne p1, Personne p2) {
-				int nameComparaison = p1.getNom().compareTo(p2.getNom());
-				return nameComparaison;
-//				if (nameComparaison != 0) {
-//				    // noms are different
-//				    return nameComparaison;
-//				} else {
-//				    // noms are same, we need to comapre prenoms
-//				    return p1.getPrenom().compareTo(p2.getPrenom());
-//				}
-			}
-		});
-		return c.personneToSortArray;
-	}
-	
+        Sorting.quickSort(c.personneToSortArray, new Comparator<Personne>() {
+            public int compare(Personne p1, Personne p2) {
+                int nameComparaison = p1.getNom().compareTo(p2.getNom());
+                return nameComparaison;
+                // if (nameComparaison != 0) {
+                // // noms are different
+                // return nameComparaison;
+                // } else {
+                // // noms are same, we need to comapre prenoms
+                // return p1.getPrenom().compareTo(p2.getPrenom());
+                // }
+            }
+        });
+        return c.personneToSortArray;
+    }
+
 }
