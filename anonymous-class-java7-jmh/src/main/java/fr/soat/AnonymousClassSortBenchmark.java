@@ -71,9 +71,6 @@ public class AnonymousClassSortBenchmark {
 
         @Setup(Level.Trial)
         public void readPersonnesFromFile() throws IOException {
-            // System.out.println("JRE version : " +
-            // System.getProperty("java.version") + " from " +
-            // System.getProperty("java.home"));
             // one time at benchark init, read list of personnes
             unsortedPersonneArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
         }
