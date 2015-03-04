@@ -11,51 +11,51 @@
 
 # Run progress: 0,00% complete, ETA 00:10:40
 # Fork: 1 of 1
-# Warmup Iteration   1: 1223,902 ops/s
-# Warmup Iteration   2: 2180,442 ops/s
-# Warmup Iteration   3: 2194,574 ops/s
-# Warmup Iteration   4: 2060,129 ops/s
-# Warmup Iteration   5: 2136,375 ops/s
-# Warmup Iteration   6: 2185,106 ops/s
-# Warmup Iteration   7: 2176,087 ops/s
-# Warmup Iteration   8: 2184,256 ops/s
-# Warmup Iteration   9: 2184,171 ops/s
-# Warmup Iteration  10: 2175,799 ops/s
-Iteration   1: 2175,686 ops/s
-Iteration   2: 2183,618 ops/s
-Iteration   3: 2175,253 ops/s
-Iteration   4: 2176,369 ops/s
-Iteration   5: 2162,454 ops/s
-Iteration   6: 2165,260 ops/s
-Iteration   7: 2168,975 ops/s
-Iteration   8: 2175,750 ops/s
-Iteration   9: 2165,180 ops/s
-Iteration  10: 2177,810 ops/s
-Iteration  11: 2175,370 ops/s
-Iteration  12: 2164,174 ops/s
-Iteration  13: 2176,035 ops/s
-Iteration  14: 2174,588 ops/s
-Iteration  15: 2101,745 ops/s
-Iteration  16: 2168,954 ops/s
-Iteration  17: 2154,406 ops/s
-Iteration  18: 2148,377 ops/s
-Iteration  19: 2172,694 ops/s
-Iteration  20: 2166,999 ops/s
-Iteration  21: 2174,362 ops/s
-Iteration  22: 2168,250 ops/s
-Iteration  23: 2150,761 ops/s
-Iteration  24: 2162,286 ops/s
-Iteration  25: 2152,834 ops/s
-Iteration  26: 2174,007 ops/s
-Iteration  27: 2089,984 ops/s
-Iteration  28: 2165,006 ops/s
-Iteration  29: 2172,184 ops/s
-Iteration  30: 2166,283 ops/s
+# Warmup Iteration   1: 1257,602 ops/s
+# Warmup Iteration   2: 2071,319 ops/s
+# Warmup Iteration   3: 2057,951 ops/s
+# Warmup Iteration   4: 2019,775 ops/s
+# Warmup Iteration   5: 1882,945 ops/s
+# Warmup Iteration   6: 1902,029 ops/s
+# Warmup Iteration   7: 1827,206 ops/s
+# Warmup Iteration   8: 1962,358 ops/s
+# Warmup Iteration   9: 1993,084 ops/s
+# Warmup Iteration  10: 1770,834 ops/s
+Iteration   1: 2022,199 ops/s
+Iteration   2: 2066,578 ops/s
+Iteration   3: 2107,989 ops/s
+Iteration   4: 1923,760 ops/s
+Iteration   5: 1810,298 ops/s
+Iteration   6: 2023,966 ops/s
+Iteration   7: 2092,776 ops/s
+Iteration   8: 2006,054 ops/s
+Iteration   9: 2006,735 ops/s
+Iteration  10: 2017,323 ops/s
+Iteration  11: 1883,719 ops/s
+Iteration  12: 1969,552 ops/s
+Iteration  13: 1870,658 ops/s
+Iteration  14: 2135,692 ops/s
+Iteration  15: 2007,782 ops/s
+Iteration  16: 1799,840 ops/s
+Iteration  17: 2097,900 ops/s
+Iteration  18: 2055,890 ops/s
+Iteration  19: 1729,504 ops/s
+Iteration  20: 2123,033 ops/s
+Iteration  21: 1930,938 ops/s
+Iteration  22: 2182,492 ops/s
+Iteration  23: 2149,291 ops/s
+Iteration  24: 2169,985 ops/s
+Iteration  25: 2129,568 ops/s
+Iteration  26: 2072,477 ops/s
+Iteration  27: 2083,825 ops/s
+Iteration  28: 2187,611 ops/s
+Iteration  29: 2186,853 ops/s
+Iteration  30: 2179,113 ops/s
 
 
-Result: 2163,522 ±(99.9%) 13,557 ops/s [Average]
-  Statistics: (min, avg, max) = (2089,984, 2163,522, 2183,618), stdev = 20,291
-  Confidence interval (99.9%): [2149,965, 2177,079]
+Result: 2034,113 ±(99.9%) 82,695 ops/s [Average]
+  Statistics: (min, avg, max) = (1729,504, 2034,113, 2187,611), stdev = 123,774
+  Confidence interval (99.9%): [1951,418, 2116,809]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -69,30 +69,53 @@ Result: 2163,522 ±(99.9%) 13,557 ops/s [Average]
 # Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 10000)
 
-# Run progress: 12,50% complete, ETA 00:10:23
+# Run progress: 12,50% complete, ETA 00:10:25
 # Fork: 1 of 1
-# Warmup Iteration   1: <failure>
+# Warmup Iteration   1: 404,435 ops/s
+# Warmup Iteration   2: 905,528 ops/s
+# Warmup Iteration   3: 907,949 ops/s
+# Warmup Iteration   4: 890,913 ops/s
+# Warmup Iteration   5: 828,027 ops/s
+# Warmup Iteration   6: 829,562 ops/s
+# Warmup Iteration   7: 871,300 ops/s
+# Warmup Iteration   8: 852,576 ops/s
+# Warmup Iteration   9: 839,653 ops/s
+# Warmup Iteration  10: 846,459 ops/s
+Iteration   1: 841,888 ops/s
+Iteration   2: 849,729 ops/s
+Iteration   3: 836,321 ops/s
+Iteration   4: 851,087 ops/s
+Iteration   5: 884,000 ops/s
+Iteration   6: 848,311 ops/s
+Iteration   7: 860,670 ops/s
+Iteration   8: 869,285 ops/s
+Iteration   9: 846,199 ops/s
+Iteration  10: 845,201 ops/s
+Iteration  11: 837,155 ops/s
+Iteration  12: 843,561 ops/s
+Iteration  13: 814,880 ops/s
+Iteration  14: 844,828 ops/s
+Iteration  15: 853,064 ops/s
+Iteration  16: 873,387 ops/s
+Iteration  17: 846,064 ops/s
+Iteration  18: 844,980 ops/s
+Iteration  19: 856,335 ops/s
+Iteration  20: 846,595 ops/s
+Iteration  21: 884,610 ops/s
+Iteration  22: 866,148 ops/s
+Iteration  23: 859,901 ops/s
+Iteration  24: 868,089 ops/s
+Iteration  25: 887,881 ops/s
+Iteration  26: 895,537 ops/s
+Iteration  27: 892,926 ops/s
+Iteration  28: 891,141 ops/s
+Iteration  29: 886,815 ops/s
+Iteration  30: 803,342 ops/s
 
-java.lang.RuntimeException: Can not read 10000 personnes from /tmp/work/lambda-benchmark/personnes.txt
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
-	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.NullPointerException
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
-	... 13 more
 
-
+Result: 857,664 ±(99.9%) 15,067 ops/s [Average]
+  Statistics: (min, avg, max) = (803,342, 857,664, 895,537), stdev = 22,552
+  Confidence interval (99.9%): [842,597, 872,732]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -106,30 +129,53 @@ Caused by: java.lang.NullPointerException
 # Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 50000)
 
-# Run progress: 25,00% complete, ETA 00:04:34
+# Run progress: 25,00% complete, ETA 00:08:57
 # Fork: 1 of 1
-# Warmup Iteration   1: <failure>
+# Warmup Iteration   1: 64,267 ops/s
+# Warmup Iteration   2: 103,989 ops/s
+# Warmup Iteration   3: 103,298 ops/s
+# Warmup Iteration   4: 105,457 ops/s
+# Warmup Iteration   5: 101,206 ops/s
+# Warmup Iteration   6: 105,016 ops/s
+# Warmup Iteration   7: 106,910 ops/s
+# Warmup Iteration   8: 104,463 ops/s
+# Warmup Iteration   9: 103,725 ops/s
+# Warmup Iteration  10: 103,312 ops/s
+Iteration   1: 110,230 ops/s
+Iteration   2: 111,213 ops/s
+Iteration   3: 111,064 ops/s
+Iteration   4: 111,633 ops/s
+Iteration   5: 104,310 ops/s
+Iteration   6: 98,370 ops/s
+Iteration   7: 109,832 ops/s
+Iteration   8: 107,923 ops/s
+Iteration   9: 107,946 ops/s
+Iteration  10: 101,494 ops/s
+Iteration  11: 103,517 ops/s
+Iteration  12: 104,791 ops/s
+Iteration  13: 105,176 ops/s
+Iteration  14: 106,279 ops/s
+Iteration  15: 111,052 ops/s
+Iteration  16: 110,515 ops/s
+Iteration  17: 105,534 ops/s
+Iteration  18: 110,478 ops/s
+Iteration  19: 106,196 ops/s
+Iteration  20: 104,886 ops/s
+Iteration  21: 105,609 ops/s
+Iteration  22: 106,357 ops/s
+Iteration  23: 107,478 ops/s
+Iteration  24: 105,192 ops/s
+Iteration  25: 105,332 ops/s
+Iteration  26: 102,899 ops/s
+Iteration  27: 103,018 ops/s
+Iteration  28: 105,285 ops/s
+Iteration  29: 106,462 ops/s
+Iteration  30: 106,283 ops/s
 
-java.lang.RuntimeException: Can not read 50000 personnes from /tmp/work/lambda-benchmark/personnes.txt
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
-	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.NullPointerException
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
-	... 13 more
 
-
+Result: 106,545 ±(99.9%) 2,134 ops/s [Average]
+  Statistics: (min, avg, max) = (98,370, 106,545, 111,633), stdev = 3,194
+  Confidence interval (99.9%): [104,411, 108,679]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -143,30 +189,53 @@ Caused by: java.lang.NullPointerException
 # Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 100000)
 
-# Run progress: 37,50% complete, ETA 00:02:36
+# Run progress: 37,50% complete, ETA 00:07:33
 # Fork: 1 of 1
-# Warmup Iteration   1: <failure>
+# Warmup Iteration   1: 33,300 ops/s
+# Warmup Iteration   2: 47,317 ops/s
+# Warmup Iteration   3: 45,763 ops/s
+# Warmup Iteration   4: 46,832 ops/s
+# Warmup Iteration   5: 46,241 ops/s
+# Warmup Iteration   6: 45,698 ops/s
+# Warmup Iteration   7: 45,041 ops/s
+# Warmup Iteration   8: 45,140 ops/s
+# Warmup Iteration   9: 44,713 ops/s
+# Warmup Iteration  10: 45,599 ops/s
+Iteration   1: 45,321 ops/s
+Iteration   2: 45,816 ops/s
+Iteration   3: 44,887 ops/s
+Iteration   4: 47,466 ops/s
+Iteration   5: 47,784 ops/s
+Iteration   6: 47,651 ops/s
+Iteration   7: 47,658 ops/s
+Iteration   8: 47,830 ops/s
+Iteration   9: 47,259 ops/s
+Iteration  10: 47,576 ops/s
+Iteration  11: 47,790 ops/s
+Iteration  12: 47,567 ops/s
+Iteration  13: 47,644 ops/s
+Iteration  14: 46,629 ops/s
+Iteration  15: 47,699 ops/s
+Iteration  16: 47,575 ops/s
+Iteration  17: 47,851 ops/s
+Iteration  18: 47,309 ops/s
+Iteration  19: 47,891 ops/s
+Iteration  20: 47,157 ops/s
+Iteration  21: 47,991 ops/s
+Iteration  22: 47,659 ops/s
+Iteration  23: 46,651 ops/s
+Iteration  24: 47,328 ops/s
+Iteration  25: 47,923 ops/s
+Iteration  26: 47,705 ops/s
+Iteration  27: 46,774 ops/s
+Iteration  28: 47,366 ops/s
+Iteration  29: 47,610 ops/s
+Iteration  30: 47,575 ops/s
 
-java.lang.RuntimeException: Can not read 100000 personnes from /tmp/work/lambda-benchmark/personnes.txt
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
-	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.NullPointerException
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
-	... 13 more
 
-
+Result: 47,298 ±(99.9%) 0,506 ops/s [Average]
+  Statistics: (min, avg, max) = (44,887, 47,298, 47,991), stdev = 0,757
+  Confidence interval (99.9%): [46,792, 47,804]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -180,30 +249,53 @@ Caused by: java.lang.NullPointerException
 # Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 200000)
 
-# Run progress: 50,00% complete, ETA 00:01:36
+# Run progress: 50,00% complete, ETA 00:06:09
 # Fork: 1 of 1
-# Warmup Iteration   1: <failure>
+# Warmup Iteration   1: 17,119 ops/s
+# Warmup Iteration   2: 21,635 ops/s
+# Warmup Iteration   3: 21,729 ops/s
+# Warmup Iteration   4: 21,678 ops/s
+# Warmup Iteration   5: 21,836 ops/s
+# Warmup Iteration   6: 21,637 ops/s
+# Warmup Iteration   7: 21,481 ops/s
+# Warmup Iteration   8: 21,785 ops/s
+# Warmup Iteration   9: 21,705 ops/s
+# Warmup Iteration  10: 21,743 ops/s
+Iteration   1: 21,728 ops/s
+Iteration   2: 21,732 ops/s
+Iteration   3: 21,682 ops/s
+Iteration   4: 21,637 ops/s
+Iteration   5: 21,580 ops/s
+Iteration   6: 21,816 ops/s
+Iteration   7: 21,803 ops/s
+Iteration   8: 21,809 ops/s
+Iteration   9: 21,877 ops/s
+Iteration  10: 21,609 ops/s
+Iteration  11: 21,559 ops/s
+Iteration  12: 21,730 ops/s
+Iteration  13: 21,878 ops/s
+Iteration  14: 21,878 ops/s
+Iteration  15: 21,606 ops/s
+Iteration  16: 21,546 ops/s
+Iteration  17: 21,796 ops/s
+Iteration  18: 21,770 ops/s
+Iteration  19: 21,762 ops/s
+Iteration  20: 21,169 ops/s
+Iteration  21: 21,714 ops/s
+Iteration  22: 21,632 ops/s
+Iteration  23: 21,277 ops/s
+Iteration  24: 19,863 ops/s
+Iteration  25: 20,946 ops/s
+Iteration  26: 21,696 ops/s
+Iteration  27: 21,433 ops/s
+Iteration  28: 21,777 ops/s
+Iteration  29: 21,560 ops/s
+Iteration  30: 20,931 ops/s
 
-java.lang.RuntimeException: Can not read 200000 personnes from /tmp/work/lambda-benchmark/personnes.txt
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
-	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.NullPointerException
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
-	... 13 more
 
-
+Result: 21,560 ±(99.9%) 0,270 ops/s [Average]
+  Statistics: (min, avg, max) = (19,863, 21,560, 21,878), stdev = 0,404
+  Confidence interval (99.9%): [21,290, 21,830]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -217,30 +309,53 @@ Caused by: java.lang.NullPointerException
 # Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 400000)
 
-# Run progress: 62,50% complete, ETA 00:00:59
+# Run progress: 62,50% complete, ETA 00:04:45
 # Fork: 1 of 1
-# Warmup Iteration   1: <failure>
+# Warmup Iteration   1: 7,406 ops/s
+# Warmup Iteration   2: 9,754 ops/s
+# Warmup Iteration   3: 9,804 ops/s
+# Warmup Iteration   4: 9,774 ops/s
+# Warmup Iteration   5: 9,744 ops/s
+# Warmup Iteration   6: 9,726 ops/s
+# Warmup Iteration   7: 9,742 ops/s
+# Warmup Iteration   8: 9,790 ops/s
+# Warmup Iteration   9: 9,548 ops/s
+# Warmup Iteration  10: 9,807 ops/s
+Iteration   1: 9,783 ops/s
+Iteration   2: 9,773 ops/s
+Iteration   3: 9,806 ops/s
+Iteration   4: 9,699 ops/s
+Iteration   5: 9,773 ops/s
+Iteration   6: 9,792 ops/s
+Iteration   7: 9,813 ops/s
+Iteration   8: 9,753 ops/s
+Iteration   9: 9,763 ops/s
+Iteration  10: 9,794 ops/s
+Iteration  11: 9,762 ops/s
+Iteration  12: 9,835 ops/s
+Iteration  13: 9,725 ops/s
+Iteration  14: 9,714 ops/s
+Iteration  15: 9,682 ops/s
+Iteration  16: 9,648 ops/s
+Iteration  17: 9,761 ops/s
+Iteration  18: 9,691 ops/s
+Iteration  19: 9,807 ops/s
+Iteration  20: 9,780 ops/s
+Iteration  21: 9,789 ops/s
+Iteration  22: 9,794 ops/s
+Iteration  23: 9,705 ops/s
+Iteration  24: 9,780 ops/s
+Iteration  25: 9,699 ops/s
+Iteration  26: 9,748 ops/s
+Iteration  27: 9,800 ops/s
+Iteration  28: 9,770 ops/s
+Iteration  29: 9,799 ops/s
+Iteration  30: 9,747 ops/s
 
-java.lang.RuntimeException: Can not read 400000 personnes from /tmp/work/lambda-benchmark/personnes.txt
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
-	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.NullPointerException
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
-	... 13 more
 
-
+Result: 9,760 ±(99.9%) 0,030 ops/s [Average]
+  Statistics: (min, avg, max) = (9,648, 9,760, 9,835), stdev = 0,045
+  Confidence interval (99.9%): [9,729, 9,790]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -254,30 +369,53 @@ Caused by: java.lang.NullPointerException
 # Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 800000)
 
-# Run progress: 75,00% complete, ETA 00:00:33
+# Run progress: 75,00% complete, ETA 00:03:19
 # Fork: 1 of 1
-# Warmup Iteration   1: <failure>
+# Warmup Iteration   1: 4,319 ops/s
+# Warmup Iteration   2: 4,919 ops/s
+# Warmup Iteration   3: 4,978 ops/s
+# Warmup Iteration   4: 4,966 ops/s
+# Warmup Iteration   5: 4,991 ops/s
+# Warmup Iteration   6: 4,917 ops/s
+# Warmup Iteration   7: 4,939 ops/s
+# Warmup Iteration   8: 4,967 ops/s
+# Warmup Iteration   9: 4,947 ops/s
+# Warmup Iteration  10: 4,978 ops/s
+Iteration   1: 4,927 ops/s
+Iteration   2: 4,972 ops/s
+Iteration   3: 4,969 ops/s
+Iteration   4: 4,951 ops/s
+Iteration   5: 4,954 ops/s
+Iteration   6: 4,941 ops/s
+Iteration   7: 4,906 ops/s
+Iteration   8: 4,971 ops/s
+Iteration   9: 4,952 ops/s
+Iteration  10: 4,946 ops/s
+Iteration  11: 4,918 ops/s
+Iteration  12: 4,926 ops/s
+Iteration  13: 4,934 ops/s
+Iteration  14: 4,908 ops/s
+Iteration  15: 4,944 ops/s
+Iteration  16: 4,939 ops/s
+Iteration  17: 4,955 ops/s
+Iteration  18: 4,966 ops/s
+Iteration  19: 4,933 ops/s
+Iteration  20: 4,956 ops/s
+Iteration  21: 4,925 ops/s
+Iteration  22: 4,662 ops/s
+Iteration  23: 4,950 ops/s
+Iteration  24: 4,941 ops/s
+Iteration  25: 4,853 ops/s
+Iteration  26: 4,836 ops/s
+Iteration  27: 4,462 ops/s
+Iteration  28: 4,763 ops/s
+Iteration  29: 4,901 ops/s
+Iteration  30: 4,908 ops/s
 
-java.lang.RuntimeException: Can not read 800000 personnes from /tmp/work/lambda-benchmark/personnes.txt
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
-	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.NullPointerException
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
-	... 13 more
 
-
+Result: 4,902 ±(99.9%) 0,071 ops/s [Average]
+  Statistics: (min, avg, max) = (4,462, 4,902, 4,972), stdev = 0,106
+  Confidence interval (99.9%): [4,832, 4,973]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -291,33 +429,63 @@ Caused by: java.lang.NullPointerException
 # Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 1200000)
 
-# Run progress: 87,50% complete, ETA 00:00:14
+# Run progress: 87,50% complete, ETA 00:01:48
 # Fork: 1 of 1
-# Warmup Iteration   1: <failure>
+# Warmup Iteration   1: 2,876 ops/s
+# Warmup Iteration   2: 3,223 ops/s
+# Warmup Iteration   3: 3,271 ops/s
+# Warmup Iteration   4: 3,260 ops/s
+# Warmup Iteration   5: 3,257 ops/s
+# Warmup Iteration   6: 3,260 ops/s
+# Warmup Iteration   7: 3,253 ops/s
+# Warmup Iteration   8: 3,241 ops/s
+# Warmup Iteration   9: 3,103 ops/s
+# Warmup Iteration  10: 3,157 ops/s
+Iteration   1: 3,037 ops/s
+Iteration   2: 3,127 ops/s
+Iteration   3: 3,215 ops/s
+Iteration   4: 3,229 ops/s
+Iteration   5: 3,077 ops/s
+Iteration   6: 3,106 ops/s
+Iteration   7: 3,252 ops/s
+Iteration   8: 3,264 ops/s
+Iteration   9: 3,240 ops/s
+Iteration  10: 3,260 ops/s
+Iteration  11: 3,273 ops/s
+Iteration  12: 3,237 ops/s
+Iteration  13: 3,264 ops/s
+Iteration  14: 3,240 ops/s
+Iteration  15: 3,224 ops/s
+Iteration  16: 3,262 ops/s
+Iteration  17: 3,258 ops/s
+Iteration  18: 3,255 ops/s
+Iteration  19: 3,250 ops/s
+Iteration  20: 3,261 ops/s
+Iteration  21: 3,248 ops/s
+Iteration  22: 3,249 ops/s
+Iteration  23: 3,256 ops/s
+Iteration  24: 3,222 ops/s
+Iteration  25: 3,253 ops/s
+Iteration  26: 3,235 ops/s
+Iteration  27: 3,264 ops/s
+Iteration  28: 3,252 ops/s
+Iteration  29: 3,075 ops/s
+Iteration  30: 3,268 ops/s
 
-java.lang.RuntimeException: Can not read 1200000 personnes from /tmp/work/lambda-benchmark/personnes.txt
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
-	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
-	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
-	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.NullPointerException
-	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
-	... 13 more
+
+Result: 3,222 ±(99.9%) 0,044 ops/s [Average]
+  Statistics: (min, avg, max) = (3,037, 3,222, 3,273), stdev = 0,065
+  Confidence interval (99.9%): [3,178, 3,265]
 
 
-
-
-# Run complete. Total time: 00:01:46
+# Run complete. Total time: 00:15:57
 
 Benchmark                          (nbPersons)   Mode  Cnt     Score    Error  Units
-LambdaSortBenchmark.benchmarkSort         5000  thrpt   30  2163,522 ± 13,557  ops/s
+LambdaSortBenchmark.benchmarkSort         5000  thrpt   30  2034,113 ± 82,695  ops/s
+LambdaSortBenchmark.benchmarkSort        10000  thrpt   30   857,664 ± 15,067  ops/s
+LambdaSortBenchmark.benchmarkSort        50000  thrpt   30   106,545 ±  2,134  ops/s
+LambdaSortBenchmark.benchmarkSort       100000  thrpt   30    47,298 ±  0,506  ops/s
+LambdaSortBenchmark.benchmarkSort       200000  thrpt   30    21,560 ±  0,270  ops/s
+LambdaSortBenchmark.benchmarkSort       400000  thrpt   30     9,760 ±  0,030  ops/s
+LambdaSortBenchmark.benchmarkSort       800000  thrpt   30     4,902 ±  0,071  ops/s
+LambdaSortBenchmark.benchmarkSort      1200000  thrpt   30     3,222 ±  0,044  ops/s

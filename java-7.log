@@ -11,51 +11,51 @@
 
 # Run progress: 0,00% complete, ETA 00:10:40
 # Fork: 1 of 1
-# Warmup Iteration   1: 1499,934 ops/s
-# Warmup Iteration   2: 2286,320 ops/s
-# Warmup Iteration   3: 2319,624 ops/s
-# Warmup Iteration   4: 2304,614 ops/s
-# Warmup Iteration   5: 2323,293 ops/s
-# Warmup Iteration   6: 2324,121 ops/s
-# Warmup Iteration   7: 2300,232 ops/s
-# Warmup Iteration   8: 2302,944 ops/s
-# Warmup Iteration   9: 2298,470 ops/s
-# Warmup Iteration  10: 2297,978 ops/s
-Iteration   1: 2306,439 ops/s
-Iteration   2: 2304,719 ops/s
-Iteration   3: 2298,663 ops/s
-Iteration   4: 2284,058 ops/s
-Iteration   5: 2285,798 ops/s
-Iteration   6: 2278,284 ops/s
-Iteration   7: 2276,967 ops/s
-Iteration   8: 2286,696 ops/s
-Iteration   9: 2291,681 ops/s
-Iteration  10: 2271,448 ops/s
-Iteration  11: 2230,951 ops/s
-Iteration  12: 2188,612 ops/s
-Iteration  13: 2136,986 ops/s
-Iteration  14: 2271,849 ops/s
-Iteration  15: 2253,769 ops/s
-Iteration  16: 2287,093 ops/s
-Iteration  17: 2273,913 ops/s
-Iteration  18: 2301,077 ops/s
-Iteration  19: 2298,799 ops/s
-Iteration  20: 2276,055 ops/s
-Iteration  21: 2241,486 ops/s
-Iteration  22: 2293,653 ops/s
-Iteration  23: 2278,834 ops/s
-Iteration  24: 2304,799 ops/s
-Iteration  25: 2279,131 ops/s
-Iteration  26: 2288,249 ops/s
-Iteration  27: 2286,050 ops/s
-Iteration  28: 2286,861 ops/s
-Iteration  29: 2279,844 ops/s
-Iteration  30: 2290,698 ops/s
+# Warmup Iteration   1: 1165,609 ops/s
+# Warmup Iteration   2: 2317,501 ops/s
+# Warmup Iteration   3: 2306,838 ops/s
+# Warmup Iteration   4: 2296,101 ops/s
+# Warmup Iteration   5: 1906,857 ops/s
+# Warmup Iteration   6: 2098,894 ops/s
+# Warmup Iteration   7: 2147,343 ops/s
+# Warmup Iteration   8: 2109,297 ops/s
+# Warmup Iteration   9: 2107,318 ops/s
+# Warmup Iteration  10: 2123,318 ops/s
+Iteration   1: 2099,884 ops/s
+Iteration   2: 1770,601 ops/s
+Iteration   3: 1944,246 ops/s
+Iteration   4: 2188,713 ops/s
+Iteration   5: 2236,481 ops/s
+Iteration   6: 2179,118 ops/s
+Iteration   7: 1942,741 ops/s
+Iteration   8: 1995,602 ops/s
+Iteration   9: 2113,067 ops/s
+Iteration  10: 2099,376 ops/s
+Iteration  11: 2096,994 ops/s
+Iteration  12: 2105,889 ops/s
+Iteration  13: 2092,344 ops/s
+Iteration  14: 2123,413 ops/s
+Iteration  15: 2054,238 ops/s
+Iteration  16: 2102,746 ops/s
+Iteration  17: 2078,961 ops/s
+Iteration  18: 2119,844 ops/s
+Iteration  19: 2071,714 ops/s
+Iteration  20: 2122,615 ops/s
+Iteration  21: 2023,792 ops/s
+Iteration  22: 2138,804 ops/s
+Iteration  23: 2110,043 ops/s
+Iteration  24: 2091,600 ops/s
+Iteration  25: 2122,050 ops/s
+Iteration  26: 2123,755 ops/s
+Iteration  27: 2138,629 ops/s
+Iteration  28: 2109,436 ops/s
+Iteration  29: 2112,425 ops/s
+Iteration  30: 2114,437 ops/s
 
 
-Result: 2274,449 ±(99.9%) 23,693 ops/s [Average]
-  Statistics: (min, avg, max) = (2136,986, 2274,449, 2306,439), stdev = 35,462
-  Confidence interval (99.9%): [2250,756, 2298,141]
+Result: 2087,452 ±(99.9%) 57,121 ops/s [Average]
+  Statistics: (min, avg, max) = (1770,601, 2087,452, 2236,481), stdev = 85,496
+  Confidence interval (99.9%): [2030,331, 2144,573]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -69,53 +69,53 @@ Result: 2274,449 ±(99.9%) 23,693 ops/s [Average]
 # Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 10000)
 
-# Run progress: 12,50% complete, ETA 00:10:25
+# Run progress: 12,50% complete, ETA 00:10:27
 # Fork: 1 of 1
-# Warmup Iteration   1: 496,227 ops/s
-# Warmup Iteration   2: 945,939 ops/s
-# Warmup Iteration   3: 942,730 ops/s
-# Warmup Iteration   4: 942,455 ops/s
-# Warmup Iteration   5: 952,132 ops/s
-# Warmup Iteration   6: 955,589 ops/s
-# Warmup Iteration   7: 947,834 ops/s
-# Warmup Iteration   8: 951,773 ops/s
-# Warmup Iteration   9: 944,723 ops/s
-# Warmup Iteration  10: 956,986 ops/s
-Iteration   1: 949,588 ops/s
-Iteration   2: 957,029 ops/s
-Iteration   3: 954,064 ops/s
-Iteration   4: 947,229 ops/s
-Iteration   5: 942,340 ops/s
-Iteration   6: 944,900 ops/s
-Iteration   7: 947,551 ops/s
-Iteration   8: 952,740 ops/s
-Iteration   9: 950,285 ops/s
-Iteration  10: 951,241 ops/s
-Iteration  11: 953,477 ops/s
-Iteration  12: 946,899 ops/s
-Iteration  13: 935,925 ops/s
-Iteration  14: 945,464 ops/s
-Iteration  15: 937,849 ops/s
-Iteration  16: 940,671 ops/s
-Iteration  17: 953,326 ops/s
-Iteration  18: 948,498 ops/s
-Iteration  19: 949,964 ops/s
-Iteration  20: 948,182 ops/s
-Iteration  21: 923,654 ops/s
-Iteration  22: 919,031 ops/s
-Iteration  23: 942,622 ops/s
-Iteration  24: 951,214 ops/s
-Iteration  25: 944,590 ops/s
-Iteration  26: 947,937 ops/s
-Iteration  27: 935,426 ops/s
-Iteration  28: 934,173 ops/s
-Iteration  29: 949,276 ops/s
-Iteration  30: 940,569 ops/s
+# Warmup Iteration   1: 373,567 ops/s
+# Warmup Iteration   2: 873,923 ops/s
+# Warmup Iteration   3: 871,457 ops/s
+# Warmup Iteration   4: 873,875 ops/s
+# Warmup Iteration   5: 871,199 ops/s
+# Warmup Iteration   6: 873,044 ops/s
+# Warmup Iteration   7: 873,112 ops/s
+# Warmup Iteration   8: 864,789 ops/s
+# Warmup Iteration   9: 869,298 ops/s
+# Warmup Iteration  10: 876,731 ops/s
+Iteration   1: 857,375 ops/s
+Iteration   2: 851,775 ops/s
+Iteration   3: 872,666 ops/s
+Iteration   4: 874,790 ops/s
+Iteration   5: 867,339 ops/s
+Iteration   6: 868,753 ops/s
+Iteration   7: 860,238 ops/s
+Iteration   8: 869,178 ops/s
+Iteration   9: 847,088 ops/s
+Iteration  10: 876,290 ops/s
+Iteration  11: 860,607 ops/s
+Iteration  12: 866,609 ops/s
+Iteration  13: 860,878 ops/s
+Iteration  14: 864,220 ops/s
+Iteration  15: 850,847 ops/s
+Iteration  16: 863,325 ops/s
+Iteration  17: 866,932 ops/s
+Iteration  18: 875,470 ops/s
+Iteration  19: 865,342 ops/s
+Iteration  20: 867,407 ops/s
+Iteration  21: 860,644 ops/s
+Iteration  22: 870,340 ops/s
+Iteration  23: 862,819 ops/s
+Iteration  24: 868,177 ops/s
+Iteration  25: 863,117 ops/s
+Iteration  26: 865,777 ops/s
+Iteration  27: 873,426 ops/s
+Iteration  28: 862,267 ops/s
+Iteration  29: 866,940 ops/s
+Iteration  30: 865,443 ops/s
 
 
-Result: 944,857 ±(99.9%) 5,775 ops/s [Average]
-  Statistics: (min, avg, max) = (919,031, 944,857, 957,029), stdev = 8,644
-  Confidence interval (99.9%): [939,082, 950,632]
+Result: 864,869 ±(99.9%) 4,652 ops/s [Average]
+  Statistics: (min, avg, max) = (847,088, 864,869, 876,290), stdev = 6,963
+  Confidence interval (99.9%): [860,217, 869,521]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -129,53 +129,53 @@ Result: 944,857 ±(99.9%) 5,775 ops/s [Average]
 # Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 50000)
 
-# Run progress: 25,00% complete, ETA 00:08:56
+# Run progress: 25,00% complete, ETA 00:08:58
 # Fork: 1 of 1
-# Warmup Iteration   1: 93,063 ops/s
-# Warmup Iteration   2: 115,715 ops/s
-# Warmup Iteration   3: 116,270 ops/s
-# Warmup Iteration   4: 115,497 ops/s
-# Warmup Iteration   5: 116,037 ops/s
-# Warmup Iteration   6: 115,641 ops/s
-# Warmup Iteration   7: 115,528 ops/s
-# Warmup Iteration   8: 114,295 ops/s
-# Warmup Iteration   9: 116,171 ops/s
-# Warmup Iteration  10: 115,217 ops/s
-Iteration   1: 115,472 ops/s
-Iteration   2: 115,209 ops/s
-Iteration   3: 113,790 ops/s
-Iteration   4: 116,180 ops/s
-Iteration   5: 116,204 ops/s
-Iteration   6: 114,880 ops/s
-Iteration   7: 114,948 ops/s
-Iteration   8: 115,661 ops/s
-Iteration   9: 115,024 ops/s
-Iteration  10: 114,925 ops/s
-Iteration  11: 114,944 ops/s
-Iteration  12: 115,887 ops/s
-Iteration  13: 113,462 ops/s
-Iteration  14: 116,298 ops/s
-Iteration  15: 114,250 ops/s
-Iteration  16: 114,512 ops/s
-Iteration  17: 116,153 ops/s
-Iteration  18: 116,749 ops/s
-Iteration  19: 114,704 ops/s
-Iteration  20: 112,915 ops/s
-Iteration  21: 116,168 ops/s
-Iteration  22: 115,723 ops/s
-Iteration  23: 116,430 ops/s
-Iteration  24: 115,948 ops/s
-Iteration  25: 116,338 ops/s
-Iteration  26: 116,560 ops/s
-Iteration  27: 116,478 ops/s
-Iteration  28: 116,419 ops/s
-Iteration  29: 115,998 ops/s
-Iteration  30: 114,833 ops/s
+# Warmup Iteration   1: 69,118 ops/s
+# Warmup Iteration   2: 104,809 ops/s
+# Warmup Iteration   3: 106,183 ops/s
+# Warmup Iteration   4: 106,513 ops/s
+# Warmup Iteration   5: 106,360 ops/s
+# Warmup Iteration   6: 105,671 ops/s
+# Warmup Iteration   7: 105,649 ops/s
+# Warmup Iteration   8: 105,555 ops/s
+# Warmup Iteration   9: 105,987 ops/s
+# Warmup Iteration  10: 106,198 ops/s
+Iteration   1: 103,927 ops/s
+Iteration   2: 106,091 ops/s
+Iteration   3: 107,418 ops/s
+Iteration   4: 106,274 ops/s
+Iteration   5: 105,671 ops/s
+Iteration   6: 106,100 ops/s
+Iteration   7: 106,802 ops/s
+Iteration   8: 107,392 ops/s
+Iteration   9: 107,136 ops/s
+Iteration  10: 106,664 ops/s
+Iteration  11: 105,505 ops/s
+Iteration  12: 106,870 ops/s
+Iteration  13: 106,658 ops/s
+Iteration  14: 105,682 ops/s
+Iteration  15: 99,831 ops/s
+Iteration  16: 99,761 ops/s
+Iteration  17: 98,123 ops/s
+Iteration  18: 99,010 ops/s
+Iteration  19: 105,785 ops/s
+Iteration  20: 105,814 ops/s
+Iteration  21: 105,940 ops/s
+Iteration  22: 99,576 ops/s
+Iteration  23: 106,076 ops/s
+Iteration  24: 103,380 ops/s
+Iteration  25: 105,803 ops/s
+Iteration  26: 106,944 ops/s
+Iteration  27: 106,500 ops/s
+Iteration  28: 104,812 ops/s
+Iteration  29: 105,604 ops/s
+Iteration  30: 104,984 ops/s
 
 
-Result: 115,435 ±(99.9%) 0,658 ops/s [Average]
-  Statistics: (min, avg, max) = (112,915, 115,435, 116,749), stdev = 0,984
-  Confidence interval (99.9%): [114,778, 116,093]
+Result: 104,871 ±(99.9%) 1,815 ops/s [Average]
+  Statistics: (min, avg, max) = (98,123, 104,871, 107,418), stdev = 2,717
+  Confidence interval (99.9%): [103,056, 106,686]
 
 
 # JMH 1.5.2 (released 26 days ago)
@@ -189,41 +189,303 @@ Result: 115,435 ±(99.9%) 0,658 ops/s [Average]
 # Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
 # Parameters: (nbPersons = 100000)
 
-# Run progress: 37,50% complete, ETA 00:07:32
+# Run progress: 37,50% complete, ETA 00:07:34
 # Fork: 1 of 1
-# Warmup Iteration   1: 35,078 ops/s
-# Warmup Iteration   2: 49,368 ops/s
-# Warmup Iteration   3: 49,554 ops/s
-# Warmup Iteration   4: 49,698 ops/s
-# Warmup Iteration   5: 49,558 ops/s
-# Warmup Iteration   6: 49,705 ops/s
-# Warmup Iteration   7: 49,840 ops/s
-# Warmup Iteration   8: 49,579 ops/s
-# Warmup Iteration   9: 49,551 ops/s
-# Warmup Iteration  10: 48,647 ops/s
-Iteration   1: 49,190 ops/s
-Iteration   2: 49,374 ops/s
-Iteration   3: 49,719 ops/s
-Iteration   4: 49,890 ops/s
-Iteration   5: 49,493 ops/s
-Iteration   6: 49,623 ops/s
-Iteration   7: 49,587 ops/s
-Iteration   8: 49,332 ops/s
-Iteration   9: 49,305 ops/s
-Iteration  10: 49,253 ops/s
-Iteration  11: 49,101 ops/s
-Iteration  12: 49,439 ops/s
-Iteration  13: 49,190 ops/s
-Iteration  14: 49,277 ops/s
-Iteration  15: 49,185 ops/s
-Iteration  16: 49,082 ops/s
-Iteration  17: 49,612 ops/s
-Iteration  18: 49,325 ops/s
-Iteration  19: 49,615 ops/s
-Iteration  20: 49,616 ops/s
-Iteration  21: 49,517 ops/s
-Iteration  22: 49,325 ops/s
-Iteration  23: 49,418 ops/s
-Iteration  24: 49,214 ops/s
-Iteration  25: 49,488 ops/s
-Iteration  26: 
+# Warmup Iteration   1: 30,067 ops/s
+# Warmup Iteration   2: 44,820 ops/s
+# Warmup Iteration   3: 44,801 ops/s
+# Warmup Iteration   4: 42,955 ops/s
+# Warmup Iteration   5: 41,507 ops/s
+# Warmup Iteration   6: 43,223 ops/s
+# Warmup Iteration   7: 42,960 ops/s
+# Warmup Iteration   8: 47,342 ops/s
+# Warmup Iteration   9: 47,403 ops/s
+# Warmup Iteration  10: 43,348 ops/s
+Iteration   1: 47,309 ops/s
+Iteration   2: 48,582 ops/s
+Iteration   3: 40,163 ops/s
+Iteration   4: 42,220 ops/s
+Iteration   5: 40,292 ops/s
+Iteration   6: 42,334 ops/s
+Iteration   7: 42,998 ops/s
+Iteration   8: 43,779 ops/s
+Iteration   9: 44,790 ops/s
+Iteration  10: 45,328 ops/s
+Iteration  11: 44,801 ops/s
+Iteration  12: 44,683 ops/s
+Iteration  13: 45,164 ops/s
+Iteration  14: 44,887 ops/s
+Iteration  15: 44,186 ops/s
+Iteration  16: 44,791 ops/s
+Iteration  17: 44,503 ops/s
+Iteration  18: 44,792 ops/s
+Iteration  19: 45,553 ops/s
+Iteration  20: 44,611 ops/s
+Iteration  21: 45,415 ops/s
+Iteration  22: 44,868 ops/s
+Iteration  23: 45,078 ops/s
+Iteration  24: 44,252 ops/s
+Iteration  25: 45,177 ops/s
+Iteration  26: 44,794 ops/s
+Iteration  27: 44,741 ops/s
+Iteration  28: 44,841 ops/s
+Iteration  29: 45,282 ops/s
+Iteration  30: 44,901 ops/s
+
+
+Result: 44,504 ±(99.9%) 1,106 ops/s [Average]
+  Statistics: (min, avg, max) = (40,163, 44,504, 48,582), stdev = 1,655
+  Confidence interval (99.9%): [43,398, 45,610]
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.7.0_60/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 200000)
+
+# Run progress: 50,00% complete, ETA 00:06:11
+# Fork: 1 of 1
+# Warmup Iteration   1: 16,713 ops/s
+# Warmup Iteration   2: 20,777 ops/s
+# Warmup Iteration   3: 20,542 ops/s
+# Warmup Iteration   4: 20,424 ops/s
+# Warmup Iteration   5: 20,650 ops/s
+# Warmup Iteration   6: 20,412 ops/s
+# Warmup Iteration   7: 20,281 ops/s
+# Warmup Iteration   8: 20,682 ops/s
+# Warmup Iteration   9: 20,562 ops/s
+# Warmup Iteration  10: 20,152 ops/s
+Iteration   1: 20,752 ops/s
+Iteration   2: 20,727 ops/s
+Iteration   3: 20,571 ops/s
+Iteration   4: 20,418 ops/s
+Iteration   5: 20,569 ops/s
+Iteration   6: 20,235 ops/s
+Iteration   7: 20,773 ops/s
+Iteration   8: 19,955 ops/s
+Iteration   9: 20,486 ops/s
+Iteration  10: 20,570 ops/s
+Iteration  11: 20,547 ops/s
+Iteration  12: 20,451 ops/s
+Iteration  13: 20,704 ops/s
+Iteration  14: 20,756 ops/s
+Iteration  15: 20,558 ops/s
+Iteration  16: 20,787 ops/s
+Iteration  17: 20,639 ops/s
+Iteration  18: 20,473 ops/s
+Iteration  19: 20,652 ops/s
+Iteration  20: 20,597 ops/s
+Iteration  21: 20,646 ops/s
+Iteration  22: 20,569 ops/s
+Iteration  23: 20,515 ops/s
+Iteration  24: 20,601 ops/s
+Iteration  25: 20,491 ops/s
+Iteration  26: 20,879 ops/s
+Iteration  27: 20,479 ops/s
+Iteration  28: 20,476 ops/s
+Iteration  29: 20,656 ops/s
+Iteration  30: 20,609 ops/s
+
+
+Result: 20,571 ±(99.9%) 0,117 ops/s [Average]
+  Statistics: (min, avg, max) = (19,955, 20,571, 20,879), stdev = 0,176
+  Confidence interval (99.9%): [20,454, 20,689]
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.7.0_60/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 400000)
+
+# Run progress: 62,50% complete, ETA 00:04:47
+# Fork: 1 of 1
+# Warmup Iteration   1: 8,565 ops/s
+# Warmup Iteration   2: 9,750 ops/s
+# Warmup Iteration   3: 9,697 ops/s
+# Warmup Iteration   4: 9,623 ops/s
+# Warmup Iteration   5: 9,642 ops/s
+# Warmup Iteration   6: 9,783 ops/s
+# Warmup Iteration   7: 9,751 ops/s
+# Warmup Iteration   8: 9,547 ops/s
+# Warmup Iteration   9: 9,686 ops/s
+# Warmup Iteration  10: 9,666 ops/s
+Iteration   1: 9,619 ops/s
+Iteration   2: 9,661 ops/s
+Iteration   3: 9,693 ops/s
+Iteration   4: 9,642 ops/s
+Iteration   5: 9,633 ops/s
+Iteration   6: 9,698 ops/s
+Iteration   7: 9,684 ops/s
+Iteration   8: 9,481 ops/s
+Iteration   9: 9,626 ops/s
+Iteration  10: 9,661 ops/s
+Iteration  11: 9,674 ops/s
+Iteration  12: 9,576 ops/s
+Iteration  13: 9,734 ops/s
+Iteration  14: 9,727 ops/s
+Iteration  15: 9,765 ops/s
+Iteration  16: 9,548 ops/s
+Iteration  17: 9,613 ops/s
+Iteration  18: 9,587 ops/s
+Iteration  19: 9,522 ops/s
+Iteration  20: 9,259 ops/s
+Iteration  21: 9,084 ops/s
+Iteration  22: 9,642 ops/s
+Iteration  23: 9,690 ops/s
+Iteration  24: 9,564 ops/s
+Iteration  25: 9,350 ops/s
+Iteration  26: 9,442 ops/s
+Iteration  27: 9,283 ops/s
+Iteration  28: 9,418 ops/s
+Iteration  29: 9,533 ops/s
+Iteration  30: 9,515 ops/s
+
+
+Result: 9,564 ±(99.9%) 0,105 ops/s [Average]
+  Statistics: (min, avg, max) = (9,084, 9,564, 9,765), stdev = 0,157
+  Confidence interval (99.9%): [9,459, 9,669]
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.7.0_60/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 800000)
+
+# Run progress: 75,00% complete, ETA 00:03:23
+# Fork: 1 of 1
+# Warmup Iteration   1: 3,831 ops/s
+# Warmup Iteration   2: 4,556 ops/s
+# Warmup Iteration   3: 4,528 ops/s
+# Warmup Iteration   4: 4,605 ops/s
+# Warmup Iteration   5: 4,608 ops/s
+# Warmup Iteration   6: 4,533 ops/s
+# Warmup Iteration   7: 4,509 ops/s
+# Warmup Iteration   8: 4,732 ops/s
+# Warmup Iteration   9: 4,596 ops/s
+# Warmup Iteration  10: 4,627 ops/s
+Iteration   1: 4,625 ops/s
+Iteration   2: 4,552 ops/s
+Iteration   3: 4,524 ops/s
+Iteration   4: 4,541 ops/s
+Iteration   5: 4,551 ops/s
+Iteration   6: 4,614 ops/s
+Iteration   7: 4,621 ops/s
+Iteration   8: 4,489 ops/s
+Iteration   9: 4,557 ops/s
+Iteration  10: 4,649 ops/s
+Iteration  11: 4,609 ops/s
+Iteration  12: 4,589 ops/s
+Iteration  13: 4,611 ops/s
+Iteration  14: 4,588 ops/s
+Iteration  15: 4,523 ops/s
+Iteration  16: 4,519 ops/s
+Iteration  17: 4,605 ops/s
+Iteration  18: 4,601 ops/s
+Iteration  19: 4,675 ops/s
+Iteration  20: 4,433 ops/s
+Iteration  21: 4,663 ops/s
+Iteration  22: 4,623 ops/s
+Iteration  23: 4,655 ops/s
+Iteration  24: 4,514 ops/s
+Iteration  25: 4,671 ops/s
+Iteration  26: 4,649 ops/s
+Iteration  27: 4,593 ops/s
+Iteration  28: 4,656 ops/s
+Iteration  29: 4,587 ops/s
+Iteration  30: 4,625 ops/s
+
+
+Result: 4,590 ±(99.9%) 0,040 ops/s [Average]
+  Statistics: (min, avg, max) = (4,433, 4,590, 4,675), stdev = 0,059
+  Confidence interval (99.9%): [4,551, 4,630]
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.7.0_60/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 1200000)
+
+# Run progress: 87,50% complete, ETA 00:01:51
+# Fork: 1 of 1
+# Warmup Iteration   1: 2,757 ops/s
+# Warmup Iteration   2: 3,042 ops/s
+# Warmup Iteration   3: 3,106 ops/s
+# Warmup Iteration   4: 3,037 ops/s
+# Warmup Iteration   5: 3,057 ops/s
+# Warmup Iteration   6: 3,036 ops/s
+# Warmup Iteration   7: 3,095 ops/s
+# Warmup Iteration   8: 2,993 ops/s
+# Warmup Iteration   9: 3,035 ops/s
+# Warmup Iteration  10: 3,077 ops/s
+Iteration   1: 3,056 ops/s
+Iteration   2: 3,011 ops/s
+Iteration   3: 3,063 ops/s
+Iteration   4: 3,046 ops/s
+Iteration   5: 3,070 ops/s
+Iteration   6: 3,061 ops/s
+Iteration   7: 3,017 ops/s
+Iteration   8: 3,069 ops/s
+Iteration   9: 2,971 ops/s
+Iteration  10: 3,033 ops/s
+Iteration  11: 2,954 ops/s
+Iteration  12: 3,033 ops/s
+Iteration  13: 3,056 ops/s
+Iteration  14: 2,878 ops/s
+Iteration  15: 3,090 ops/s
+Iteration  16: 2,853 ops/s
+Iteration  17: 2,938 ops/s
+Iteration  18: 3,313 ops/s
+Iteration  19: 3,323 ops/s
+Iteration  20: 3,228 ops/s
+Iteration  21: 3,307 ops/s
+Iteration  22: 3,332 ops/s
+Iteration  23: 3,290 ops/s
+Iteration  24: 3,308 ops/s
+Iteration  25: 3,220 ops/s
+Iteration  26: 3,236 ops/s
+Iteration  27: 3,275 ops/s
+Iteration  28: 2,843 ops/s
+Iteration  29: 3,159 ops/s
+Iteration  30: 3,091 ops/s
+
+
+Result: 3,104 ±(99.9%) 0,098 ops/s [Average]
+  Statistics: (min, avg, max) = (2,843, 3,104, 3,332), stdev = 0,147
+  Confidence interval (99.9%): [3,006, 3,203]
+
+
+# Run complete. Total time: 00:16:33
+
+Benchmark                                  (nbPersons)   Mode  Cnt     Score    Error  Units
+AnonymousClassSortBenchmark.benchmarkSort         5000  thrpt   30  2087,452 ± 57,121  ops/s
+AnonymousClassSortBenchmark.benchmarkSort        10000  thrpt   30   864,869 ±  4,652  ops/s
+AnonymousClassSortBenchmark.benchmarkSort        50000  thrpt   30   104,871 ±  1,815  ops/s
+AnonymousClassSortBenchmark.benchmarkSort       100000  thrpt   30    44,504 ±  1,106  ops/s
+AnonymousClassSortBenchmark.benchmarkSort       200000  thrpt   30    20,571 ±  0,117  ops/s
+AnonymousClassSortBenchmark.benchmarkSort       400000  thrpt   30     9,564 ±  0,105  ops/s
+AnonymousClassSortBenchmark.benchmarkSort       800000  thrpt   30     4,590 ±  0,040  ops/s
+AnonymousClassSortBenchmark.benchmarkSort      1200000  thrpt   30     3,104 ±  0,098  ops/s
