@@ -72,7 +72,7 @@ public class AnonymousClassSortBenchmark {
         @Setup(Level.Trial)
         public void readPersonnesFromFile() throws IOException {
             // one time at benchark init, read list of personnes
-            unsortedPersonneArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
+            unsortedPersonneArray = PersonneProvider.load(AnonymousClassBenchmark.DATA_FILE, nbPersons);
         }
 
         @Setup(Level.Invocation)
