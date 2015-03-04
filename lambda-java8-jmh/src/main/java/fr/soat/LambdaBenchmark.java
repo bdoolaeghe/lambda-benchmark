@@ -59,6 +59,8 @@ import cern.colt.Sorting;
 // @Fork(value = 0)
 public class LambdaBenchmark {
 
+    public static final String DATA_FILE = System.getProperty("input.data");
+
     @State(Scope.Benchmark)
     public static class PersonnesContainer {
 
@@ -79,7 +81,7 @@ public class LambdaBenchmark {
             System.out.println("JRE version : " + System.getProperty("java.version") + " from "
                     + System.getProperty("java.home"));
             // one time at benchark init, read list of personnes
-            unsortedPersonneArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
+	    unsortedPersonneArray = PersonneProvider.load(DATA_FILE, nbPersons);
         }
 
         @Setup(Level.Invocation)
@@ -98,7 +100,7 @@ public class LambdaBenchmark {
         // Here is my benchmark code (sort array)
         // use a lambda
         // Arrays.sort(
-        Sorting.quickSort(c.personneToSortArray, Comparator.comparing((Personne p) -> p.getNom()));
+        Sorting.quickSort(c.personneToSortArray, Comparator.comparing(Personne::getNom));
         // .thenComparing((Personne p) -> p.getPrenom()));
         return c.personneToSortArray;
     }

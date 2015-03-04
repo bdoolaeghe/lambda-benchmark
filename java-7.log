@@ -1,0 +1,229 @@
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.7.0_60/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 5000)
+
+# Run progress: 0,00% complete, ETA 00:10:40
+# Fork: 1 of 1
+# Warmup Iteration   1: 1499,934 ops/s
+# Warmup Iteration   2: 2286,320 ops/s
+# Warmup Iteration   3: 2319,624 ops/s
+# Warmup Iteration   4: 2304,614 ops/s
+# Warmup Iteration   5: 2323,293 ops/s
+# Warmup Iteration   6: 2324,121 ops/s
+# Warmup Iteration   7: 2300,232 ops/s
+# Warmup Iteration   8: 2302,944 ops/s
+# Warmup Iteration   9: 2298,470 ops/s
+# Warmup Iteration  10: 2297,978 ops/s
+Iteration   1: 2306,439 ops/s
+Iteration   2: 2304,719 ops/s
+Iteration   3: 2298,663 ops/s
+Iteration   4: 2284,058 ops/s
+Iteration   5: 2285,798 ops/s
+Iteration   6: 2278,284 ops/s
+Iteration   7: 2276,967 ops/s
+Iteration   8: 2286,696 ops/s
+Iteration   9: 2291,681 ops/s
+Iteration  10: 2271,448 ops/s
+Iteration  11: 2230,951 ops/s
+Iteration  12: 2188,612 ops/s
+Iteration  13: 2136,986 ops/s
+Iteration  14: 2271,849 ops/s
+Iteration  15: 2253,769 ops/s
+Iteration  16: 2287,093 ops/s
+Iteration  17: 2273,913 ops/s
+Iteration  18: 2301,077 ops/s
+Iteration  19: 2298,799 ops/s
+Iteration  20: 2276,055 ops/s
+Iteration  21: 2241,486 ops/s
+Iteration  22: 2293,653 ops/s
+Iteration  23: 2278,834 ops/s
+Iteration  24: 2304,799 ops/s
+Iteration  25: 2279,131 ops/s
+Iteration  26: 2288,249 ops/s
+Iteration  27: 2286,050 ops/s
+Iteration  28: 2286,861 ops/s
+Iteration  29: 2279,844 ops/s
+Iteration  30: 2290,698 ops/s
+
+
+Result: 2274,449 ±(99.9%) 23,693 ops/s [Average]
+  Statistics: (min, avg, max) = (2136,986, 2274,449, 2306,439), stdev = 35,462
+  Confidence interval (99.9%): [2250,756, 2298,141]
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.7.0_60/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 10000)
+
+# Run progress: 12,50% complete, ETA 00:10:25
+# Fork: 1 of 1
+# Warmup Iteration   1: 496,227 ops/s
+# Warmup Iteration   2: 945,939 ops/s
+# Warmup Iteration   3: 942,730 ops/s
+# Warmup Iteration   4: 942,455 ops/s
+# Warmup Iteration   5: 952,132 ops/s
+# Warmup Iteration   6: 955,589 ops/s
+# Warmup Iteration   7: 947,834 ops/s
+# Warmup Iteration   8: 951,773 ops/s
+# Warmup Iteration   9: 944,723 ops/s
+# Warmup Iteration  10: 956,986 ops/s
+Iteration   1: 949,588 ops/s
+Iteration   2: 957,029 ops/s
+Iteration   3: 954,064 ops/s
+Iteration   4: 947,229 ops/s
+Iteration   5: 942,340 ops/s
+Iteration   6: 944,900 ops/s
+Iteration   7: 947,551 ops/s
+Iteration   8: 952,740 ops/s
+Iteration   9: 950,285 ops/s
+Iteration  10: 951,241 ops/s
+Iteration  11: 953,477 ops/s
+Iteration  12: 946,899 ops/s
+Iteration  13: 935,925 ops/s
+Iteration  14: 945,464 ops/s
+Iteration  15: 937,849 ops/s
+Iteration  16: 940,671 ops/s
+Iteration  17: 953,326 ops/s
+Iteration  18: 948,498 ops/s
+Iteration  19: 949,964 ops/s
+Iteration  20: 948,182 ops/s
+Iteration  21: 923,654 ops/s
+Iteration  22: 919,031 ops/s
+Iteration  23: 942,622 ops/s
+Iteration  24: 951,214 ops/s
+Iteration  25: 944,590 ops/s
+Iteration  26: 947,937 ops/s
+Iteration  27: 935,426 ops/s
+Iteration  28: 934,173 ops/s
+Iteration  29: 949,276 ops/s
+Iteration  30: 940,569 ops/s
+
+
+Result: 944,857 ±(99.9%) 5,775 ops/s [Average]
+  Statistics: (min, avg, max) = (919,031, 944,857, 957,029), stdev = 8,644
+  Confidence interval (99.9%): [939,082, 950,632]
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.7.0_60/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 50000)
+
+# Run progress: 25,00% complete, ETA 00:08:56
+# Fork: 1 of 1
+# Warmup Iteration   1: 93,063 ops/s
+# Warmup Iteration   2: 115,715 ops/s
+# Warmup Iteration   3: 116,270 ops/s
+# Warmup Iteration   4: 115,497 ops/s
+# Warmup Iteration   5: 116,037 ops/s
+# Warmup Iteration   6: 115,641 ops/s
+# Warmup Iteration   7: 115,528 ops/s
+# Warmup Iteration   8: 114,295 ops/s
+# Warmup Iteration   9: 116,171 ops/s
+# Warmup Iteration  10: 115,217 ops/s
+Iteration   1: 115,472 ops/s
+Iteration   2: 115,209 ops/s
+Iteration   3: 113,790 ops/s
+Iteration   4: 116,180 ops/s
+Iteration   5: 116,204 ops/s
+Iteration   6: 114,880 ops/s
+Iteration   7: 114,948 ops/s
+Iteration   8: 115,661 ops/s
+Iteration   9: 115,024 ops/s
+Iteration  10: 114,925 ops/s
+Iteration  11: 114,944 ops/s
+Iteration  12: 115,887 ops/s
+Iteration  13: 113,462 ops/s
+Iteration  14: 116,298 ops/s
+Iteration  15: 114,250 ops/s
+Iteration  16: 114,512 ops/s
+Iteration  17: 116,153 ops/s
+Iteration  18: 116,749 ops/s
+Iteration  19: 114,704 ops/s
+Iteration  20: 112,915 ops/s
+Iteration  21: 116,168 ops/s
+Iteration  22: 115,723 ops/s
+Iteration  23: 116,430 ops/s
+Iteration  24: 115,948 ops/s
+Iteration  25: 116,338 ops/s
+Iteration  26: 116,560 ops/s
+Iteration  27: 116,478 ops/s
+Iteration  28: 116,419 ops/s
+Iteration  29: 115,998 ops/s
+Iteration  30: 114,833 ops/s
+
+
+Result: 115,435 ±(99.9%) 0,658 ops/s [Average]
+  Statistics: (min, avg, max) = (112,915, 115,435, 116,749), stdev = 0,984
+  Confidence interval (99.9%): [114,778, 116,093]
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.7.0_60/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.AnonymousClassSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 100000)
+
+# Run progress: 37,50% complete, ETA 00:07:32
+# Fork: 1 of 1
+# Warmup Iteration   1: 35,078 ops/s
+# Warmup Iteration   2: 49,368 ops/s
+# Warmup Iteration   3: 49,554 ops/s
+# Warmup Iteration   4: 49,698 ops/s
+# Warmup Iteration   5: 49,558 ops/s
+# Warmup Iteration   6: 49,705 ops/s
+# Warmup Iteration   7: 49,840 ops/s
+# Warmup Iteration   8: 49,579 ops/s
+# Warmup Iteration   9: 49,551 ops/s
+# Warmup Iteration  10: 48,647 ops/s
+Iteration   1: 49,190 ops/s
+Iteration   2: 49,374 ops/s
+Iteration   3: 49,719 ops/s
+Iteration   4: 49,890 ops/s
+Iteration   5: 49,493 ops/s
+Iteration   6: 49,623 ops/s
+Iteration   7: 49,587 ops/s
+Iteration   8: 49,332 ops/s
+Iteration   9: 49,305 ops/s
+Iteration  10: 49,253 ops/s
+Iteration  11: 49,101 ops/s
+Iteration  12: 49,439 ops/s
+Iteration  13: 49,190 ops/s
+Iteration  14: 49,277 ops/s
+Iteration  15: 49,185 ops/s
+Iteration  16: 49,082 ops/s
+Iteration  17: 49,612 ops/s
+Iteration  18: 49,325 ops/s
+Iteration  19: 49,615 ops/s
+Iteration  20: 49,616 ops/s
+Iteration  21: 49,517 ops/s
+Iteration  22: 49,325 ops/s
+Iteration  23: 49,418 ops/s
+Iteration  24: 49,214 ops/s
+Iteration  25: 49,488 ops/s
+Iteration  26: 

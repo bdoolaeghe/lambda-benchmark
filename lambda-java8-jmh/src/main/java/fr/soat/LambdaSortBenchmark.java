@@ -78,7 +78,7 @@ public class LambdaSortBenchmark {
         @Setup(Level.Trial)
         public void readPersonnesFromFile() throws IOException {
             // one time at benchark init, read list of personnes
-            unsortedPersonneArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
+            unsortedPersonneArray = PersonneProvider.load(LambdaBenchmark.DATA_FILE, nbPersons);
         }
 
         @Setup(Level.Invocation)
@@ -97,9 +97,8 @@ public class LambdaSortBenchmark {
         // Here is my benchmark code (sort array)
         // use a lambda
         Arrays.sort(c.personneToSortArray,
-                    Comparator
-                    .comparing((Personne p) -> p.getNom())
-                    .thenComparing((Personne p) -> p.getPrenom()));
+                    Comparator.comparing(Personne::getNom)
+                    .thenComparing(Personne::getPrenom));
 
         return c.personneToSortArray;
     }

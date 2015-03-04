@@ -58,6 +58,8 @@ import cern.colt.Sorting;
 @Threads(1)
 public class AnonymousClassBenchmark {
 
+    public static final String DATA_FILE = System.getProperty("input.data");
+
     @State(Scope.Benchmark)
     public static class PersonnesContainer {
 
@@ -77,8 +79,8 @@ public class AnonymousClassBenchmark {
         public void readPersonnesFromFile() throws IOException {
             System.out.println("JRE version : " + System.getProperty("java.version") + " from "
                     + System.getProperty("java.home"));
-            // one time at benchark init, read list of personnes
-            unsortedPersonneArray = PersonneProvider.load("../data/personnes.txt", nbPersons);
+	    // one time at benchark init, read list of personnes
+	    unsortedPersonneArray = PersonneProvider.load(DATA_FILE, nbPersons);
         }
 
         @Setup(Level.Invocation)

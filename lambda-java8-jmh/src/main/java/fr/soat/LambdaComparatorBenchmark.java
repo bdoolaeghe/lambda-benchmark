@@ -58,8 +58,7 @@ public class LambdaComparatorBenchmark {
 
         Personne p2 = new Personne("Miguel", "DUSS");
 
-        Comparator<Personne> comparator = Comparator.comparing((Personne p) -> p.getNom()).thenComparing(
-                (Personne p) -> p.getPrenom());
+        Comparator<Personne> comparator = Comparator.comparing(Personne::getNom).thenComparing(Personne::getPrenom);
 
     }
 
@@ -76,7 +75,7 @@ public class LambdaComparatorBenchmark {
     // @Benchmark
     public Comparator<Personne> createOnlyLambda(PersonnesContainer c) {
         // use a lambda
-        return Comparator.comparing((Personne p) -> p.getNom()).thenComparing((Personne p) -> p.getPrenom());
+        return Comparator.comparing(Personne::getNom).thenComparing(Personne::getPrenom);
     }
 
     @Warmup(iterations = 10, time = 1000, timeUnit = TimeUnit.MILLISECONDS)
@@ -85,7 +84,7 @@ public class LambdaComparatorBenchmark {
     public int createAndInvokeLambda(PersonnesContainer c) {
         // Here is my benchmark code (sort array)
         // use a lambda
-        int compared = Comparator.comparing((Personne p) -> p.getNom()).thenComparing((Personne p) -> p.getPrenom())
+        int compared = Comparator.comparing(Personne::getNom).thenComparing(Personne::getPrenom)
                 .compare(c.p1, c.p2);
         return compared;
     }

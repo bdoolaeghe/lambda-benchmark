@@ -1,0 +1,323 @@
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.8.0_40/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 5000)
+
+# Run progress: 0,00% complete, ETA 00:10:40
+# Fork: 1 of 1
+# Warmup Iteration   1: 1223,902 ops/s
+# Warmup Iteration   2: 2180,442 ops/s
+# Warmup Iteration   3: 2194,574 ops/s
+# Warmup Iteration   4: 2060,129 ops/s
+# Warmup Iteration   5: 2136,375 ops/s
+# Warmup Iteration   6: 2185,106 ops/s
+# Warmup Iteration   7: 2176,087 ops/s
+# Warmup Iteration   8: 2184,256 ops/s
+# Warmup Iteration   9: 2184,171 ops/s
+# Warmup Iteration  10: 2175,799 ops/s
+Iteration   1: 2175,686 ops/s
+Iteration   2: 2183,618 ops/s
+Iteration   3: 2175,253 ops/s
+Iteration   4: 2176,369 ops/s
+Iteration   5: 2162,454 ops/s
+Iteration   6: 2165,260 ops/s
+Iteration   7: 2168,975 ops/s
+Iteration   8: 2175,750 ops/s
+Iteration   9: 2165,180 ops/s
+Iteration  10: 2177,810 ops/s
+Iteration  11: 2175,370 ops/s
+Iteration  12: 2164,174 ops/s
+Iteration  13: 2176,035 ops/s
+Iteration  14: 2174,588 ops/s
+Iteration  15: 2101,745 ops/s
+Iteration  16: 2168,954 ops/s
+Iteration  17: 2154,406 ops/s
+Iteration  18: 2148,377 ops/s
+Iteration  19: 2172,694 ops/s
+Iteration  20: 2166,999 ops/s
+Iteration  21: 2174,362 ops/s
+Iteration  22: 2168,250 ops/s
+Iteration  23: 2150,761 ops/s
+Iteration  24: 2162,286 ops/s
+Iteration  25: 2152,834 ops/s
+Iteration  26: 2174,007 ops/s
+Iteration  27: 2089,984 ops/s
+Iteration  28: 2165,006 ops/s
+Iteration  29: 2172,184 ops/s
+Iteration  30: 2166,283 ops/s
+
+
+Result: 2163,522 ±(99.9%) 13,557 ops/s [Average]
+  Statistics: (min, avg, max) = (2089,984, 2163,522, 2183,618), stdev = 20,291
+  Confidence interval (99.9%): [2149,965, 2177,079]
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.8.0_40/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 10000)
+
+# Run progress: 12,50% complete, ETA 00:10:23
+# Fork: 1 of 1
+# Warmup Iteration   1: <failure>
+
+java.lang.RuntimeException: Can not read 10000 personnes from /tmp/work/lambda-benchmark/personnes.txt
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
+	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
+	... 13 more
+
+
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.8.0_40/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 50000)
+
+# Run progress: 25,00% complete, ETA 00:04:34
+# Fork: 1 of 1
+# Warmup Iteration   1: <failure>
+
+java.lang.RuntimeException: Can not read 50000 personnes from /tmp/work/lambda-benchmark/personnes.txt
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
+	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
+	... 13 more
+
+
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.8.0_40/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 100000)
+
+# Run progress: 37,50% complete, ETA 00:02:36
+# Fork: 1 of 1
+# Warmup Iteration   1: <failure>
+
+java.lang.RuntimeException: Can not read 100000 personnes from /tmp/work/lambda-benchmark/personnes.txt
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
+	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
+	... 13 more
+
+
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.8.0_40/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 200000)
+
+# Run progress: 50,00% complete, ETA 00:01:36
+# Fork: 1 of 1
+# Warmup Iteration   1: <failure>
+
+java.lang.RuntimeException: Can not read 200000 personnes from /tmp/work/lambda-benchmark/personnes.txt
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
+	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
+	... 13 more
+
+
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.8.0_40/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 400000)
+
+# Run progress: 62,50% complete, ETA 00:00:59
+# Fork: 1 of 1
+# Warmup Iteration   1: <failure>
+
+java.lang.RuntimeException: Can not read 400000 personnes from /tmp/work/lambda-benchmark/personnes.txt
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
+	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
+	... 13 more
+
+
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.8.0_40/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 800000)
+
+# Run progress: 75,00% complete, ETA 00:00:33
+# Fork: 1 of 1
+# Warmup Iteration   1: <failure>
+
+java.lang.RuntimeException: Can not read 800000 personnes from /tmp/work/lambda-benchmark/personnes.txt
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
+	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
+	... 13 more
+
+
+
+
+# JMH 1.5.2 (released 26 days ago)
+# VM invoker: /home/patouche/Softs/jdk/jdk1.8.0_40/jre/bin/java
+# VM options: -server -Xmx2g -XX:+TieredCompilation -Dinput.data=/tmp/work/lambda-benchmark/personnes.txt
+# Warmup: 10 iterations, 2000 ms each
+# Measurement: 30 iterations, 2000 ms each
+# Timeout: 10 min per iteration
+# Threads: 4 threads, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: fr.soat.LambdaSortBenchmark.benchmarkSort
+# Parameters: (nbPersons = 1200000)
+
+# Run progress: 87,50% complete, ETA 00:00:14
+# Fork: 1 of 1
+# Warmup Iteration   1: <failure>
+
+java.lang.RuntimeException: Can not read 1200000 personnes from /tmp/work/lambda-benchmark/personnes.txt
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:26)
+	at fr.soat.LambdaSortBenchmark$PersonnesContainer.readPersonnesFromFile(LambdaSortBenchmark.java:81)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort._jmh_tryInit_f_personnescontainer2_2(LambdaSortBenchmark_benchmarkSort.java:317)
+	at fr.soat.generated.LambdaSortBenchmark_benchmarkSort.benchmarkSort_Throughput(LambdaSortBenchmark_benchmarkSort.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:189)
+	at org.openjdk.jmh.runner.LoopBenchmarkHandler$BenchmarkTask.call(LoopBenchmarkHandler.java:171)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.NullPointerException
+	at fr.soat.PersonneProvider.load(PersonneProvider.java:22)
+	... 13 more
+
+
+
+
+# Run complete. Total time: 00:01:46
+
+Benchmark                          (nbPersons)   Mode  Cnt     Score    Error  Units
+LambdaSortBenchmark.benchmarkSort         5000  thrpt   30  2163,522 ± 13,557  ops/s
