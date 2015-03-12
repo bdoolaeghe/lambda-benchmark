@@ -52,15 +52,17 @@ import org.openjdk.jmh.annotations.Warmup;
 
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.SECONDS)
-@Fork(value = 1, jvmArgsPrepend = { "-server", "-Xmx2g", "-XX:+TieredCompilation" })
-@Threads(4)
-public class AnonymousClassSortBenchmark {
+@Warmup(iterations = 20, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+@Measurement(iterations = 20, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+@Fork(value = 3, jvmArgsPrepend = { "-server", "-Xmx2g", "-XX:+TieredCompilation" })
+@Threads(2)
+public class AnonymousClassTimSortBenchmark {
 
     @State(Scope.Thread)
     public static class PersonnesContainer {
 
         // measure for a set of dataset...
-        @Param({ "5000", "10000", "50000", "100000", "200000", "400000", "800000", "1200000" })
+        @Param({ "5000", "10000", "50000", "100000", "200000", "400000" , "800000" /*, "1200000"*/ })
         int nbPersons;
 
         // the array of peronne to sort during invokation work
@@ -84,22 +86,14 @@ public class AnonymousClassSortBenchmark {
 
     }
 
-    @Warmup(iterations = 10, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 30, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
     @Benchmark
-    public Personne[] benchmarkSort(PersonnesContainer c) {
+    public Personne[] anonymous_class_for_comparator(PersonnesContainer c) {
         // Here is my benchmark code (sort array)
         // use an anonymous class
         Arrays.sort(c.personneToSortArray, new Comparator<Personne>() {
             public int compare(Personne p1, Personne p2) {
-                int nameComparaison = p1.getNom().compareTo(p2.getNom());
-                if (nameComparaison != 0) {
-                    // noms are different
-                    return nameComparaison;
-                } else {
-                    // noms are same, we need to comapre prenoms
-                    return p1.getPrenom().compareTo(p2.getPrenom());
-                }
+                int nomCompaison = p1.getNom().compareTo(p2.getNom());
+                return (nomCompaison == 0) ? p1.getPrenom().compareTo(p2.getPrenom()) : nomCompaison;
             }
         });
 

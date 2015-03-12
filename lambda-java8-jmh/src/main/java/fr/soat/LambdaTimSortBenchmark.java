@@ -32,11 +32,8 @@
 package fr.soat;
 
 import java.io.IOException;
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openjdk.jmh.annotations.Benchmark;
@@ -53,20 +50,19 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.annotations.Threads;
 import org.openjdk.jmh.annotations.Warmup;
 
-import cern.colt.Sorting;
-
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.SECONDS)
-@Fork(value = 1, jvmArgsPrepend = { "-server", "-Xmx2g", "-XX:+TieredCompilation" })
-@Threads(4)
-// @Fork(value = 0)
-public class LambdaSortBenchmark {
+@Warmup(iterations = 20, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+@Measurement(iterations = 20, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+@Fork(value = 3, jvmArgsPrepend = { "-server", "-Xmx2g", "-XX:+TieredCompilation" })
+@Threads(2)
+public class LambdaTimSortBenchmark {
 
     @State(Scope.Thread)
     public static class PersonnesContainer {
 
         // measure for a set of dataset...
-        @Param({ "5000", "10000", "50000", "100000", "200000", "400000", "800000", "1200000" })
+        @Param({ "5000", "10000", "50000", "100000", "200000", "400000" , "800000" /*, "1200000"*/ })
         int nbPersons;
 
         // the array of peronne to sort during invokation work
@@ -90,18 +86,43 @@ public class LambdaSortBenchmark {
 
     }
 
-    @Warmup(iterations = 10, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
-    @Measurement(iterations = 30, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
     @Benchmark
-    public Personne[] benchmarkSort(PersonnesContainer c) {
+    public Personne[] lambda_as_compartor(PersonnesContainer c) {
         // Here is my benchmark code (sort array)
-        // use a lambda
+        // use a lambda to define the Comparator
         Arrays.sort(c.personneToSortArray,
-                    Comparator
-                    .comparing((Personne p) -> p.getNom())
-                    .thenComparing((Personne p) -> p.getPrenom()));
-
+                (p1, p2) -> {
+                    int nomCompaison = p1.getNom().compareTo(p2.getNom());
+                    return (nomCompaison == 0) ? p1.getPrenom().compareTo(p2.getPrenom()) : nomCompaison;
+                });        
         return c.personneToSortArray;
     }
+    
+    @Benchmark
+    public Personne[] lambda_comparing(PersonnesContainer c) {
+        // Here is my benchmark code (sort array)
+        // use a lambda and comparing method define the comparator
+        Arrays.sort(c.personneToSortArray,
+                Comparator
+                .comparing((Personne p) -> p.getNom())
+                .thenComparing((Personne p) -> p.getPrenom()));
+        
+        return c.personneToSortArray;
+    }
+    
+    @Benchmark
+    public Personne[] methodFreference_comparing(PersonnesContainer c) {
+        // Here is my benchmark code (sort array)
+        // use a method reference and comparing method
+        Arrays.sort(c.personneToSortArray,
+                Comparator
+                .comparing(Personne::getNom)
+                .thenComparing(Personne::getPrenom));
 
+        
+        return c.personneToSortArray;
+    }
+  
+    
+    
 }

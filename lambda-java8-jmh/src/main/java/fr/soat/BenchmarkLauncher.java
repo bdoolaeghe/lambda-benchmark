@@ -12,7 +12,7 @@ public final class BenchmarkLauncher {
 
     public static void main(final String[] _args) throws RunnerException {
         Options opt = new OptionsBuilder()
-                            .include("fr.soat.LambdaBenchmark")
+                            .include("fr.soat.LambdaSortBenchmark")
                             .shouldDoGC(true)
                             .build();
 

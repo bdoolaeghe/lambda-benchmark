@@ -1,4 +1,5 @@
-export JAVA_HOME=/home/my/dev/java/jdk1.8.0_31
+#export JAVA_HOME=/home/my/dev/java/jdk1.8.0_31
+export JAVA_HOME=/home/my/dev/java/jdk1.8.0_40
 #~/dev/java/jdk1.8.0_40/
 export PATH=$JAVA_HOME/bin/:$PATH
 #echo $JAVA_HOME
