@@ -1,0 +1,12 @@
+Benchmark;(nbPersons);Mode;Cnt;Score;Error;Units
+BaselineJava7Benchmark.anonymous_class;100;ss;1000;0,045;±;0,015;ms/op
+BaselineJava7Benchmark.anonymous_class;200;ss;1000;0,067;±;0,011;ms/op
+BaselineJava7Benchmark.anonymous_class;400;ss;1000;0,127;±;0,018;ms/op
+BaselineJava7Benchmark.anonymous_class;800;ss;1000;0,274;±;0,010;ms/op
+BaselineJava7Benchmark.anonymous_class;1600;ss;1000;0,615;±;0,024;ms/op
+BaselineJava7Benchmark.anonymous_class;3200;ss;1000;1,404;±;0,021;ms/op
+BaselineJava7Benchmark.anonymous_class;6400;ss;1000;2,808;±;0,049;ms/op
+BaselineJava7Benchmark.anonymous_class;12800;ss;1000;6,108;±;0,096;ms/op
+BaselineJava7Benchmark.anonymous_class;51200;ss;1000;32,946;±;0,218;ms/op
+BaselineJava7Benchmark.anonymous_class;204800;ss;1000;174,312;±;0,638;ms/op
+BaselineJava7Benchmark.anonymous_class;819200;ss;1000;895,510;±;5,161;ms/op
