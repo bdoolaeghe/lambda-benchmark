@@ -41,16 +41,17 @@ public class BaselineJava7Benchmark {
         
         // measure for a set of dataset...
         @Param({ 
-        	"100", "200", "400", "800", "1600", "3200", 
-        	"6400", 
-        	"12800",
-//        	"25600",
-        	"51200",
-//        	"102400",
-        	"204800",
-//        	"409600",
-        	"819200"        	
-        	})
+            "10",
+            "100", "1000", 
+            "10000", 
+//          "12800",
+//          "25600",
+            "100000",
+//          "102400",
+//          "204800",
+//          "409600",
+            "1000000"           
+            })
         int nbPersons;
 
         // the array of peronne to sort during invokation work
