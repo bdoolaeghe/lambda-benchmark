@@ -21,17 +21,17 @@ import org.openjdk.jmh.annotations.Warmup;
 
 @BenchmarkMode(Mode.SingleShotTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
-@Warmup(iterations = 1000)
-@Measurement(iterations = 1000)
+@Warmup(iterations = 2000)
+@Measurement(iterations = 2000)
 //@Fork(value = 20, jvmArgsPrepend = { "-server", "-Xmx2g", "-XX:+TieredCompilation" })
-@Fork(1)//value = 1, jvmArgsPrepend = { "-server", "-Xmx2g", "-XX:+TieredCompilation" })
+@Fork(value = 1, jvmArgsPrepend = { "-server", "-Xmx2g", "-XX:+TieredCompilation" })
 @Threads(1)
 public class LambdaVsAnonymousClassBenchmark {
 
     @State(Scope.Benchmark)
     public static class PersonnesContainer {
 
-
+    	// anonymous class comparator
         Comparator<Personne> comparatorAsAnonymousClass = new Comparator<Personne>() {
             public int compare(Personne p1, Personne p2) {
                 int nomCompaison = p1.getNom().compareTo(p2.getNom());
@@ -39,27 +39,29 @@ public class LambdaVsAnonymousClassBenchmark {
             }
         };
 
+        // comparator as simple lambda
         Comparator<Personne> comparatorAsLambda = (p1, p2) -> {
             int nomCompaison = p1.getNom().compareTo(p2.getNom());
             return (nomCompaison != 0) ? nomCompaison : p1.getPrenom().compareTo(p2.getPrenom()) ;
         };
         
-        private Comparator<Personne> comparatorNom = (p1, p2) -> p1.getNom().compareTo(p2.getNom()); 
-        private Comparator<Personne> comparatorPrenom = (p1, p2) -> p1.getPrenom().compareTo(p2.getPrenom());
-        Comparator<Personne> comparatorAsLinkedLambda  = comparatorNom.thenComparing(comparatorPrenom);
+//        // comparator as linked lambda
+//        private Comparator<Personne> comparatorNom = (p1, p2) -> p1.getNom().compareTo(p2.getNom()); 
+//        private Comparator<Personne> comparatorPrenom = (p1, p2) -> p1.getPrenom().compareTo(p2.getPrenom());
+//        Comparator<Personne> comparatorAsLinkedLambda  = comparatorNom.thenComparing(comparatorPrenom);
 
+        // comparator as lambda built with method references
+        Comparator<Personne> comparatorWithMehodReference = Comparator
+        		.comparing(Personne::getNom)
+        		.thenComparing(Personne::getPrenom);
         
         // measure for a set of dataset...
-        @Param({ 
-        	"100", "200", "400", "800", "1600", "3200", 
-        	"6400", 
-        	"12800",
-//        	"25600",
-        	"51200",
-//        	"102400",
-        	"204800",
-//        	"409600",
-        	"819200"        	
+        @Param({
+        	"10",
+        	"100",
+        	"1000",
+        	"10000",
+        	"100000"
         	})
         int nbPersons;
 
@@ -95,13 +97,40 @@ public class LambdaVsAnonymousClassBenchmark {
         Arrays.sort(c.personneToSortArray, c.comparatorAsLambda);        
         return c.personneToSortArray;
     }
-    
-    
+
     @Benchmark
-    public Object[] lambda_then(PersonnesContainer c) {
-    	Arrays.sort(c.personneToSortArray, c.comparatorAsLinkedLambda);        
+    public Object[] method_reference(PersonnesContainer c) {
+        Arrays.sort(c.personneToSortArray, c.comparatorWithMehodReference);        
         return c.personneToSortArray;
     }
+
+    @Benchmark
+    public Object[] stream_anonymous_class(PersonnesContainer c) {
+		return Arrays.stream(c.personneToSortArray)
+			  .sorted(c.comparatorAsAnonymousClass)
+			  .toArray();
+    }
+    
+    @Benchmark
+    public Object[] stream_lambda(PersonnesContainer c) {
+		return Arrays.stream(c.personneToSortArray)
+			  .sorted(c.comparatorAsLambda)
+			  .toArray();
+    }
+
+    @Benchmark
+    public Object[] stream_method_ref_then(PersonnesContainer c) {
+		return Arrays.stream(c.personneToSortArray)
+			  .sorted(c.comparatorWithMehodReference)
+			  .toArray();
+    }
+    
+    
+//    @Benchmark
+//    public Object[] lambda_then(PersonnesContainer c) {
+//    	Arrays.sort(c.personneToSortArray, c.comparatorAsLinkedLambda);        
+//        return c.personneToSortArray;
+//    }
     
 //    @Benchmark
 //    public Object[] lambda_comparator(PersonnesContainer c) {
@@ -122,19 +151,13 @@ public class LambdaVsAnonymousClassBenchmark {
 //        return c.personneToSortArray;
 //    }
 
-    @Benchmark
-    public Object[] stream_lambda(PersonnesContainer c) {
-		return Arrays.stream(c.personneToSortArray)
-			  .sorted(c.comparatorAsLambda)
-			  .toArray();
-    }
-
-    @Benchmark
-    public Object[] stream_lambda_then(PersonnesContainer c) {
-    	return Arrays.stream(c.personneToSortArray)
-			  .sorted(c.comparatorAsLinkedLambda)
-			  .toArray();
-    }
+    
+//    @Benchmark
+//    public Object[] stream_lambda_then(PersonnesContainer c) {
+//    	return Arrays.stream(c.personneToSortArray)
+//			  .sorted(c.comparatorAsLinkedLambda)
+//			  .toArray();
+//    }
 //    
 //    @Benchmark
 //    public Object[] stream_lambda_comparator(PersonnesContainer c) {
@@ -156,25 +179,25 @@ public class LambdaVsAnonymousClassBenchmark {
 
     /* parallel sorts */
     
-    @Benchmark
-    public Object[] parallel_anonymous_class(PersonnesContainer c) {
-        Arrays.parallelSort(c.personneToSortArray, c.comparatorAsAnonymousClass);
-        return c.personneToSortArray;
-    }
+//    @Benchmark
+//    public Object[] parallel_anonymous_class(PersonnesContainer c) {
+//        Arrays.parallelSort(c.personneToSortArray, c.comparatorAsAnonymousClass);
+//        return c.personneToSortArray;
+//    }
     
-    @Benchmark
-    public Object[] parallel_lambda(PersonnesContainer c) {
-        Arrays.parallelSort(c.personneToSortArray, c.comparatorAsLambda);        
-        return c.personneToSortArray;
-    }
-    
-    
-    @Benchmark
-    public Object[] parallel_lambda_then(PersonnesContainer c) {
-    	Arrays.parallelSort(c.personneToSortArray,
-                c.comparatorAsLinkedLambda);        
-        return c.personneToSortArray;
-    }
+//    @Benchmark
+//    public Object[] parallel_lambda(PersonnesContainer c) {
+//        Arrays.parallelSort(c.personneToSortArray, c.comparatorAsLambda);        
+//        return c.personneToSortArray;
+//    }
+//    
+//    
+//    @Benchmark
+//    public Object[] parallel_lambda_then(PersonnesContainer c) {
+//    	Arrays.parallelSort(c.personneToSortArray,
+//                c.comparatorAsLinkedLambda);        
+//        return c.personneToSortArray;
+//    }
     
 //    @Benchmark
 //    public Object[] parallel_lambda_comparator(PersonnesContainer c) {
@@ -196,21 +219,21 @@ public class LambdaVsAnonymousClassBenchmark {
 //    }
 
     
-    @Benchmark
-    public Object[] parallel_stream_lambda(PersonnesContainer c) {
-		return Arrays.stream(c.personneToSortArray)
-		      .parallel()
-			  .sorted(c.comparatorAsLambda)
-			  .toArray();
-    }
-
-    @Benchmark
-    public Object[] parallel_stream_lambda_then(PersonnesContainer c) {
-    	return Arrays.stream(c.personneToSortArray)
-  		      .parallel()
-    		  .sorted(c.comparatorAsLinkedLambda)
-			  .toArray();
-    }
+//    @Benchmark
+//    public Object[] parallel_stream_lambda(PersonnesContainer c) {
+//		return Arrays.stream(c.personneToSortArray)
+//		      .parallel()
+//			  .sorted(c.comparatorAsLambda)
+//			  .toArray();
+//    }
+//
+//    @Benchmark
+//    public Object[] parallel_stream_lambda_then(PersonnesContainer c) {
+//    	return Arrays.stream(c.personneToSortArray)
+//  		      .parallel()
+//    		  .sorted(c.comparatorAsLinkedLambda)
+//			  .toArray();
+//    }
     
 //    @Benchmark
 //    public Object[] parallel_stream_lambda_comparator(PersonnesContainer c) {
