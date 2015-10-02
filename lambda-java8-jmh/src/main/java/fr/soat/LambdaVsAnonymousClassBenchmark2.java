@@ -56,6 +56,20 @@ public class LambdaVsAnonymousClassBenchmark {
         		.thenComparing(Personne::getPrenom);
         
         // measure for a set of dataset...
+<<<<<<< HEAD
+        @Param({ 
+            "10",
+            "100", "1000", 
+            "10000", 
+//          "12800",
+//          "25600",
+            "100000",
+//          "102400",
+//          "204800",
+//          "409600",
+            "1000000"           
+            })
+=======
         @Param({
         	"10",
         	"100",
@@ -63,6 +77,7 @@ public class LambdaVsAnonymousClassBenchmark {
         	"10000",
         	"100000"
         	})
+>>>>>>> b009e025d816b64f30a65169f44f0d33aafde765
         int nbPersons;
 
         // the array of peronne to sort during invokation work
@@ -85,6 +100,9 @@ public class LambdaVsAnonymousClassBenchmark {
         }
 
     }
+<<<<<<< HEAD
+//
+=======
 
     @Benchmark
     public Object[] anonymous_class(PersonnesContainer c) {
@@ -132,6 +150,21 @@ public class LambdaVsAnonymousClassBenchmark {
 //        return c.personneToSortArray;
 //    }
     
+>>>>>>> b009e025d816b64f30a65169f44f0d33aafde765
+//    @Benchmark
+//    public Object[] anonymous_class(PersonnesContainer c) {
+//        Arrays.sort(c.personneToSortArray, c.comparatorAsAnonymousClass);
+//        return c.personneToSortArray;
+//    }
+//    
+//    @Benchmark
+//    public Object[] lambda(PersonnesContainer c) {
+//        Arrays.sort(c.personneToSortArray, c.comparatorAsLambda);        
+//        return c.personneToSortArray;
+//    }
+<<<<<<< HEAD
+//    
+=======
 
     
 //    @Benchmark
@@ -140,6 +173,7 @@ public class LambdaVsAnonymousClassBenchmark {
 //			  .sorted(c.comparatorAsLinkedLambda)
 //			  .toArray();
 //    }
+>>>>>>> b009e025d816b64f30a65169f44f0d33aafde765
 //    
 //    @Benchmark
 //    public Object[] lambda_then(PersonnesContainer c) {
